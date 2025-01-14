@@ -1,1 +1,930 @@
-document.addEventListener("DOMContentLoaded",(function(){let t,e,n,o,i=!1;const c=i=>{if(i){t=document.getElementById("site-name").offsetWidth;const i=document.querySelectorAll("#menus .menus_item");e=0,i.length&&i.forEach((t=>{e+=t.offsetWidth}));const c=document.querySelector("#search-button");n=c?c.offsetWidth:0,o=document.getElementById("nav")}let c="";c=window.innerWidth<=768||t+e+n>o.offsetWidth-120,c?o.classList.add("hide-menu"):o.classList.remove("hide-menu")},s=()=>{btf.sidebarPaddingR(),document.body.style.overflow="hidden",btf.animateIn(document.getElementById("menu-mask"),"to_show 0.5s"),document.getElementById("sidebar-menus").classList.add("open"),i=!0},a=()=>{const t=document.body;t.style.overflow="",t.style.paddingRight="",btf.animateOut(document.getElementById("menu-mask"),"to_hide 0.5s"),document.getElementById("sidebar-menus").classList.remove("open"),i=!1},l=function(){const t=GLOBAL_CONFIG.highlight;if(!t)return;const e=t.highlightCopy,n=t.highlightLang,o=GLOBAL_CONFIG_SITE.isHighlightShrink,i=t.highlightHeightLimit,c=e||n||void 0!==o,s="highlighjs"===t.plugin?document.querySelectorAll("figure.highlight"):document.querySelectorAll('pre[class*="language-"]');if(!c&&!i||!s.length)return;const a="prismjs"===t.plugin;let l="",d="";const r=!0===o?"closed":"";void 0!==o&&(l=`<i class="fas fa-angle-down expand ${r}"></i>`),e&&(d='<div class="copy-notice"></div><i class="fas fa-paste copy-button"></i>');const u=t=>{const e=t.parentNode;e.classList.add("copy-true");const n=window.getSelection(),o=document.createRange();a?o.selectNodeContents(e.querySelectorAll("pre code")[0]):o.selectNodeContents(e.querySelectorAll("table .code pre")[0]),n.removeAllRanges(),n.addRange(o);n.toString();((t,e)=>{if(document.queryCommandSupported&&document.queryCommandSupported("copy"))if(document.execCommand("copy"),void 0!==GLOBAL_CONFIG.Snackbar)btf.snackbarShow(GLOBAL_CONFIG.copy.success);else{const t=e.previousElementSibling;t.innerText=GLOBAL_CONFIG.copy.success,t.style.opacity=1,setTimeout((()=>{t.style.opacity=0}),700)}else void 0!==GLOBAL_CONFIG.Snackbar?btf.snackbarShow(GLOBAL_CONFIG.copy.noSupport):e.previousElementSibling.innerText=GLOBAL_CONFIG.copy.noSupport})(0,t.lastChild),n.removeAllRanges(),e.classList.remove("copy-true")},m=function(t){const e=t.target.classList;e.contains("expand")?(t=>{const e=[...t.parentNode.children].slice(1);t.firstChild.classList.toggle("closed"),btf.isHidden(e[e.length-1])?e.forEach((t=>{t.style.display="block"})):e.forEach((t=>{t.style.display="none"}))})(this):e.contains("copy-button")&&u(this)},f=function(){this.classList.toggle("expand-done")};function g(t,e,n){const o=document.createDocumentFragment();if(c){const e=document.createElement("div");e.className=`highlight-tools ${r}`,e.innerHTML=l+t+d,e.addEventListener("click",m),o.appendChild(e)}if(i&&e.offsetHeight>i+30){const t=document.createElement("div");t.className="code-expand-btn",t.innerHTML='<i class="fas fa-angle-double-down"></i>',t.addEventListener("click",f),o.appendChild(t)}"hl"===n?e.insertBefore(o,e.firstChild):e.parentNode.insertBefore(o,e)}n?a?s.forEach((function(t){const e=`<div class="code-lang">${t.getAttribute("data-language")?t.getAttribute("data-language"):"Code"}</div>`;btf.wrap(t,"figure",{class:"highlight"}),g(e,t)})):s.forEach((function(t){let e=t.getAttribute("class").split(" ")[1];"plain"!==e&&void 0!==e||(e="Code");g(`<div class="code-lang">${e}</div>`,t,"hl")})):a?s.forEach((function(t){btf.wrap(t,"figure",{class:"highlight"}),g("",t)})):s.forEach((function(t){g("",t,"hl")}))};const d=function(){const t=document.getElementById("rightside"),e=window.innerHeight+56;if(document.body.scrollHeight<=e)return void(t.style.cssText="opacity: 1; transform: translateX(-58px)");let n=0,o=!0;const i=document.getElementById("page-header"),c="function"==typeof chatBtnHide,s="function"==typeof chatBtnShow,a=btf.throttle((()=>{const a=window.scrollY||document.documentElement.scrollTop,l=function(t){const e=t>n;return n=t,e}(a);a>56?(l?(i.classList.contains("nav-visible")&&i.classList.remove("nav-visible"),s&&!0===o&&(chatBtnHide(),o=!1)):(i.classList.contains("nav-visible")||i.classList.add("nav-visible"),c&&!1===o&&(chatBtnShow(),o=!0)),i.classList.add("nav-fixed"),"0"===window.getComputedStyle(t).getPropertyValue("opacity")&&(t.style.cssText="opacity: 0.8; transform: translateX(-58px)")):(0===a&&i.classList.remove("nav-fixed","nav-visible"),t.style.cssText="opacity: ''; transform: ''"),document.body.scrollHeight<=e&&(t.style.cssText="opacity: 0.8; transform: translateX(-58px)")}),200);window.scrollCollect=a,window.addEventListener("scroll",scrollCollect)},r=function(){const t=GLOBAL_CONFIG_SITE.isToc,e=GLOBAL_CONFIG.isAnchor,n=document.getElementById("article-container");if(!n||!t&&!e)return;let o,i,c,s,a;if(t){const t=document.getElementById("card-toc");i=t.getElementsByClassName("toc-content")[0],o=i.querySelectorAll(".toc-link");const e=t.querySelector(".toc-percentage");a=i.classList.contains("is-expand"),c=t=>{const o=n.clientHeight,i=document.documentElement.clientHeight,c=(t-n.offsetTop)/(o>i?o-i:document.documentElement.scrollHeight-i),s=Math.round(100*c),a=s>100?100:s<=0?0:s;e.textContent=a},window.mobileToc={open:()=>{t.style.cssText="animation: toc-open .3s; opacity: 1; right: 55px"},close:()=>{t.style.animation="toc-close .2s",setTimeout((()=>{t.style.cssText="opacity:''; animation: ''; right: ''"}),100)}},i.addEventListener("click",(t=>{t.preventDefault();const e=t.target.classList;if(e.contains("toc-content"))return;const n=e.contains("toc-link")?t.target:t.target.parentElement;btf.scrollToDest(btf.getEleTop(document.getElementById(decodeURI(n.getAttribute("href")).replace("#",""))),300),window.innerWidth<900&&window.mobileToc.close()})),s=t=>{const e=t.getBoundingClientRect().top,n=i.scrollTop;e>document.documentElement.clientHeight-100&&(i.scrollTop=n+150),e<100&&(i.scrollTop=n-150)}}const l=n.querySelectorAll("h1,h2,h3,h4,h5,h6");let d="";window.tocScrollFn=function(){return btf.throttle((function(){const n=window.scrollY||document.documentElement.scrollTop;t&&c(n),function(n){if(0===n)return!1;let c="",r="";if(l.forEach((function(t,e){if(n>btf.getEleTop(t)-80){const n=t.id;c=n?"#"+encodeURI(n):"",r=e}})),d!==r&&(e&&btf.updateAnchor(c),d=r,t)){if(i.querySelectorAll(".active").forEach((t=>{t.classList.remove("active")})),""===c)return;const t=o[r];if(t.classList.add("active"),setTimeout((()=>{s(t)}),0),a)return;let e=t.parentNode;for(;!e.matches(".toc");e=e.parentNode)e.matches("li")&&e.classList.add("active")}}(n)}),100)()},window.addEventListener("scroll",tocScrollFn)},u=()=>{const t=document.body;t.classList.add("read-mode");const e=document.createElement("button");e.type="button",e.className="fas fa-sign-out-alt exit-readmode",t.appendChild(e),e.addEventListener("click",(function n(){t.classList.remove("read-mode"),e.remove(),e.removeEventListener("click",n)}))},m=()=>{"light"===("dark"===document.documentElement.getAttribute("data-theme")?"dark":"light")?(activateDarkMode(),saveToLocal.set("theme","dark",2),void 0!==GLOBAL_CONFIG.Snackbar&&btf.snackbarShow(GLOBAL_CONFIG.Snackbar.day_to_night)):(activateLightMode(),saveToLocal.set("theme","light",2),void 0!==GLOBAL_CONFIG.Snackbar&&btf.snackbarShow(GLOBAL_CONFIG.Snackbar.night_to_day)),"function"==typeof utterancesTheme&&utterancesTheme(),"function"==typeof changeGiscusTheme&&changeGiscusTheme(),"object"==typeof FB&&window.loadFBComment(),"function"==typeof runMermaid&&window.runMermaid()},f=t=>{const e=document.getElementById("rightside-config-hide").classList;e.toggle("show"),t.classList.contains("show")&&(e.add("status"),setTimeout((()=>{e.remove("status")}),300)),t.classList.toggle("show")},g=()=>{btf.scrollToDest(0,500)},h=()=>{const t=document.documentElement.classList;t.contains("hide-aside")?saveToLocal.set("aside-status","show",2):saveToLocal.set("aside-status","hide",2),t.toggle("hide-aside")},p=()=>{"0"===window.getComputedStyle(document.getElementById("card-toc")).getPropertyValue("opacity")?window.mobileToc.open():window.mobileToc.close()};document.getElementById("rightside").addEventListener("click",(function(t){const e=t.target.id?t.target:t.target.parentNode;switch(e.id){case"go-up":g();break;case"rightside_config":f(e);break;case"mobile-toc-button":p();break;case"readmode":u();break;case"darkmode":m();break;case"hide-aside-btn":h()}}));const y=()=>{document.querySelectorAll("#sidebar-menus .site-page.group").forEach((function(t){t.addEventListener("click",(function(){this.classList.toggle("hide")}))}))},L=function(){document.querySelectorAll("#article-container .tab > button").forEach((function(t){t.addEventListener("click",(function(t){const e=this,n=e.parentNode;if(!n.classList.contains("active")){const t=n.parentNode.nextElementSibling,o=btf.siblings(n,".active")[0];o&&o.classList.remove("active"),n.classList.add("active");const i=e.getAttribute("data-href").replace("#","");[...t.children].forEach((t=>{t.id===i?t.classList.add("active"):t.classList.remove("active")}));const c=t.querySelectorAll(`#${i} .fj-gallery`);c.length>0&&btf.initJustifiedGallery(c)}}))}))},b=()=>{document.querySelectorAll("#article-container .tabs .tab-to-top").forEach((function(t){t.addEventListener("click",(function(){btf.scrollToDest(btf.getEleTop(btf.getParents(this,".tabs")),300)}))}))},v=function(t){t.forEach((t=>{const e=t,n=e.getAttribute("datetime");e.innerText=btf.diffDate(n,!0),e.style.display="inline"}))};window.refreshFn=function(){c(!0),o.classList.add("show"),GLOBAL_CONFIG_SITE.isPost?(void 0!==GLOBAL_CONFIG.noticeOutdate&&function(){const t=GLOBAL_CONFIG.noticeOutdate,e=btf.diffDate(GLOBAL_CONFIG_SITE.postUpdate);if(e>=t.limitDay){const n=document.createElement("div");n.className="post-outdate-notice",n.textContent=t.messagePrev+" "+e+" "+t.messageNext;const o=document.getElementById("article-container");"top"===t.position?o.insertBefore(n,o.firstChild):o.appendChild(n)}}(),GLOBAL_CONFIG.relativeDate.post&&v(document.querySelectorAll("#post-meta time"))):(GLOBAL_CONFIG.relativeDate.homepage&&v(document.querySelectorAll("#recent-posts time")),GLOBAL_CONFIG.runtime&&(()=>{const t=document.getElementById("runtimeshow");if(t){const e=t.getAttribute("data-publishDate");t.innerText=btf.diffDate(e)+" "+GLOBAL_CONFIG.runtime}})(),(()=>{const t=document.getElementById("last-push-date");if(t){const e=t.getAttribute("data-lastPushDate");t.innerText=btf.diffDate(e,!0)}})(),function(){const t=document.querySelectorAll("#aside-cat-list .card-category-list-item.parent i");t.length&&t.forEach((function(t){t.addEventListener("click",(function(t){t.preventDefault(),this.classList.toggle("expand");const e=this.parentNode.nextElementSibling;btf.isHidden(e)?e.style.display="block":e.style.display="none"}))}))}()),r(),GLOBAL_CONFIG_SITE.isHome&&(()=>{const t=document.getElementById("scroll-down");t&&t.addEventListener("click",(function(){btf.scrollToDest(document.getElementById("content-inner").offsetTop,300)}))})(),l(),GLOBAL_CONFIG.isPhotoFigcaption&&document.querySelectorAll("#article-container img").forEach((function(t){const e=t.parentNode,n=t.title||t.alt;if(n&&!e.parentNode.classList.contains("justified-gallery")){const o=document.createElement("div");o.className="img-alt is-center",o.textContent=n,e.insertBefore(o,t.nextSibling)}})),d();const t=document.querySelectorAll("#article-container .fj-gallery");t.length&&function(t){if(t.forEach((t=>{t.querySelectorAll("img").forEach((t=>{const e=t.getAttribute("data-lazy-src");e&&(t.src=e),btf.wrap(t,"div",{class:"fj-gallery-item"})}))})),window.fjGallery)return void setTimeout((()=>{btf.initJustifiedGallery(t)}),100);const e=document.createElement("link");e.rel="stylesheet",e.href=GLOBAL_CONFIG.source.justifiedGallery.css,document.body.appendChild(e),getScript(`${GLOBAL_CONFIG.source.justifiedGallery.js}`).then((()=>{btf.initJustifiedGallery(t)}))}(t),btf.loadLightbox(document.querySelectorAll("#article-container img:not(.no-lightbox)")),(()=>{const t=document.querySelectorAll("#article-container :not(.highlight) > table, #article-container > table");t.length&&t.forEach((t=>{btf.wrap(t,"div",{class:"table-wrap"})}))})(),function(){const t=document.querySelectorAll("#article-container .hide-button");t.length&&t.forEach((function(t){t.addEventListener("click",(function(t){this.classList.add("open");const e=this.nextElementSibling.querySelectorAll(".fj-gallery");e.length&&btf.initJustifiedGallery(e)}))}))}(),L(),b(),function(){let t=!1;const e=document.querySelector("#comment-switch > .switch-btn");e&&e.addEventListener("click",(function(){this.classList.toggle("move"),document.querySelectorAll("#post-comment > .comment-wrap > div").forEach((function(t){btf.isHidden(t)?t.style.cssText="display: block;animation: tabshow .5s":t.style.cssText="display: none;animation: ''"})),t||"function"!=typeof loadOtherComment||(t=!0,loadOtherComment())}))}(),document.getElementById("toggle-menu").addEventListener("click",(()=>{s()}))},refreshFn(),window.addEventListener("resize",(()=>{c(!1),btf.isHidden(document.getElementById("toggle-menu"))&&i&&a()})),document.getElementById("menu-mask").addEventListener("click",(t=>{a()})),y(),GLOBAL_CONFIG.islazyload&&(window.lazyLoadInstance=new LazyLoad({elements_selector:"img",threshold:0,data_src:"lazy-src"})),void 0!==GLOBAL_CONFIG.copyright&&(()=>{const t=GLOBAL_CONFIG.copyright;document.body.oncopy=e=>{let n;e.preventDefault();const o=window.getSelection(0).toString();return n=o.length>t.limitCount?o+"\n\n\n"+t.languages.author+"\n"+t.languages.link+window.location.href+"\n"+t.languages.source+"\n"+t.languages.info:o,e.clipboardData?e.clipboardData.setData("text",n):window.clipboardData.setData("text",n)}})()}));
+document.addEventListener('DOMContentLoaded', () => {
+  let headerContentWidth, $nav
+  let mobileSidebarOpen = false
+
+  const adjustMenu = init => {
+    const getAllWidth = ele => Array.from(ele).reduce((width, i) => width + i.offsetWidth, 0)
+
+    if (init) {
+      const blogInfoWidth = getAllWidth(document.querySelector('#blog-info > a').children)
+      const menusWidth = getAllWidth(document.getElementById('menus').children)
+      headerContentWidth = blogInfoWidth + menusWidth
+      $nav = document.getElementById('nav')
+    }
+
+    const hideMenuIndex = window.innerWidth <= 768 || headerContentWidth > $nav.offsetWidth - 120
+    $nav.classList.toggle('hide-menu', hideMenuIndex)
+  }
+
+  // 初始化header
+  const initAdjust = () => {
+    adjustMenu(true)
+    $nav.classList.add('show')
+  }
+
+  // sidebar menus
+  const sidebarFn = {
+    open: () => {
+      btf.overflowPaddingR.add()
+      btf.animateIn(document.getElementById('menu-mask'), 'to_show 0.5s')
+      document.getElementById('sidebar-menus').classList.add('open')
+      mobileSidebarOpen = true
+    },
+    close: () => {
+      btf.overflowPaddingR.remove()
+      btf.animateOut(document.getElementById('menu-mask'), 'to_hide 0.5s')
+      document.getElementById('sidebar-menus').classList.remove('open')
+      mobileSidebarOpen = false
+    }
+  }
+
+  /**
+   * 首頁top_img底下的箭頭
+   */
+  const scrollDownInIndex = () => {
+    const handleScrollToDest = () => {
+      btf.scrollToDest(document.getElementById('content-inner').offsetTop, 300)
+    }
+
+    const $scrollDownEle = document.getElementById('scroll-down')
+    $scrollDownEle && btf.addEventListenerPjax($scrollDownEle, 'click', handleScrollToDest)
+  }
+
+  /**
+   * 代碼
+   * 只適用於Hexo默認的代碼渲染
+   */
+  const addHighlightTool = () => {
+    const highLight = GLOBAL_CONFIG.highlight
+    if (!highLight) return
+
+    const { highlightCopy, highlightLang, highlightHeightLimit, highlightFullpage, highlightMacStyle, plugin } = highLight
+    const isHighlightShrink = GLOBAL_CONFIG_SITE.isHighlightShrink
+    const isShowTool = highlightCopy || highlightLang || isHighlightShrink !== undefined || highlightFullpage || highlightMacStyle
+    const $figureHighlight = plugin === 'highlight.js' ? document.querySelectorAll('figure.highlight') : document.querySelectorAll('pre[class*="language-"]')
+
+    if (!((isShowTool || highlightHeightLimit) && $figureHighlight.length)) return
+
+    const isPrismjs = plugin === 'prismjs'
+    const highlightShrinkClass = isHighlightShrink === true ? 'closed' : ''
+    const highlightShrinkEle = isHighlightShrink !== undefined ? '<i class="fas fa-angle-down expand"></i>' : ''
+    const highlightCopyEle = highlightCopy ? '<div class="copy-notice"></div><i class="fas fa-paste copy-button"></i>' : ''
+    const highlightMacStyleEle = '<div class="macStyle"><div class="mac-close"></div><div class="mac-minimize"></div><div class="mac-maximize"></div></div>'
+    const highlightFullpageEle = highlightFullpage ? '<i class="fa-solid fa-up-right-and-down-left-from-center fullpage-button"></i>' : ''
+
+    const alertInfo = (ele, text) => {
+      if (GLOBAL_CONFIG.Snackbar !== undefined) {
+        btf.snackbarShow(text)
+      } else {
+        ele.textContent = text
+        ele.style.opacity = 1
+        setTimeout(() => { ele.style.opacity = 0 }, 800)
+      }
+    }
+
+    const copy = async (text, ctx) => {
+      try {
+        await navigator.clipboard.writeText(text)
+        alertInfo(ctx, GLOBAL_CONFIG.copy.success)
+      } catch (err) {
+        console.error('Failed to copy: ', err)
+        alertInfo(ctx, GLOBAL_CONFIG.copy.noSupport)
+      }
+    }
+
+    // click events
+    const highlightCopyFn = (ele, clickEle) => {
+      const $buttonParent = ele.parentNode
+      $buttonParent.classList.add('copy-true')
+      const preCodeSelector = isPrismjs ? 'pre code' : 'table .code pre'
+      const codeElement = $buttonParent.querySelector(preCodeSelector)
+      if (!codeElement) return
+      copy(codeElement.innerText, clickEle.previousElementSibling)
+      $buttonParent.classList.remove('copy-true')
+    }
+
+    const highlightShrinkFn = ele => ele.classList.toggle('closed')
+
+    const codeFullpage = (item, clickEle) => {
+      const wrapEle = item.closest('figure.highlight')
+      const isFullpage = wrapEle.classList.toggle('code-fullpage')
+
+      document.body.style.overflow = isFullpage ? 'hidden' : ''
+      clickEle.classList.toggle('fa-down-left-and-up-right-to-center', isFullpage)
+      clickEle.classList.toggle('fa-up-right-and-down-left-from-center', !isFullpage)
+    }
+
+    const highlightToolsFn = e => {
+      const $target = e.target.classList
+      const currentElement = e.currentTarget
+      if ($target.contains('expand')) highlightShrinkFn(currentElement)
+      else if ($target.contains('copy-button')) highlightCopyFn(currentElement, e.target)
+      else if ($target.contains('fullpage-button')) codeFullpage(currentElement, e.target)
+    }
+
+    const expandCode = e => e.currentTarget.classList.toggle('expand-done')
+
+    // 獲取隱藏狀態下元素的真實高度
+    const getActualHeight = item => {
+      const hiddenElements = new Map()
+
+      const fix = () => {
+        let current = item
+        while (current !== document.body && current != null) {
+          if (window.getComputedStyle(current).display === 'none') {
+            hiddenElements.set(current, current.getAttribute('style') || '')
+          }
+          current = current.parentNode
+        }
+
+        const style = 'visibility: hidden !important; display: block !important;'
+        hiddenElements.forEach((originalStyle, elem) => {
+          elem.setAttribute('style', originalStyle ? originalStyle + ';' + style : style)
+        })
+      }
+
+      const restore = () => {
+        hiddenElements.forEach((originalStyle, elem) => {
+          if (originalStyle === '') elem.removeAttribute('style')
+          else elem.setAttribute('style', originalStyle)
+        })
+      }
+
+      fix()
+      const height = item.offsetHeight
+      restore()
+      return height
+    }
+
+    const createEle = (lang, item) => {
+      const fragment = document.createDocumentFragment()
+
+      if (isShowTool) {
+        const hlTools = document.createElement('div')
+        hlTools.className = `highlight-tools ${highlightShrinkClass}`
+        hlTools.innerHTML = highlightMacStyleEle + highlightShrinkEle + lang + highlightCopyEle + highlightFullpageEle
+        btf.addEventListenerPjax(hlTools, 'click', highlightToolsFn)
+        fragment.appendChild(hlTools)
+      }
+
+      if (highlightHeightLimit && getActualHeight(item) > highlightHeightLimit + 30) {
+        const ele = document.createElement('div')
+        ele.className = 'code-expand-btn'
+        ele.innerHTML = '<i class="fas fa-angle-double-down"></i>'
+        btf.addEventListenerPjax(ele, 'click', expandCode)
+        fragment.appendChild(ele)
+      }
+
+      isPrismjs ? item.parentNode.insertBefore(fragment, item) : item.insertBefore(fragment, item.firstChild)
+    }
+
+    $figureHighlight.forEach(item => {
+      let langName = ''
+      if (isPrismjs) btf.wrap(item, 'figure', { class: 'highlight' })
+
+      if (!highlightLang) {
+        createEle('', item)
+        return
+      }
+
+      if (isPrismjs) {
+        langName = item.getAttribute('data-language') || 'Code'
+      } else {
+        langName = item.getAttribute('class').split(' ')[1]
+        if (langName === 'plain' || langName === undefined) langName = 'Code'
+      }
+      createEle(`<div class="code-lang">${langName}</div>`, item)
+    })
+  }
+
+  /**
+   * PhotoFigcaption
+   */
+  const addPhotoFigcaption = () => {
+    if (!GLOBAL_CONFIG.isPhotoFigcaption) return
+    document.querySelectorAll('#article-container img').forEach(item => {
+      const altValue = item.title || item.alt
+      if (!altValue) return
+      const ele = document.createElement('div')
+      ele.className = 'img-alt text-center'
+      ele.textContent = altValue
+      item.insertAdjacentElement('afterend', ele)
+    })
+  }
+
+  /**
+   * Lightbox
+   */
+  const runLightbox = () => {
+    btf.loadLightbox(document.querySelectorAll('#article-container img:not(.no-lightbox)'))
+  }
+
+  /**
+   * justified-gallery 圖庫排版
+   */
+
+  const fetchUrl = async url => {
+    try {
+      const response = await fetch(url)
+      return await response.json()
+    } catch (error) {
+      console.error('Failed to fetch URL:', error)
+      return []
+    }
+  }
+
+  const runJustifiedGallery = (container, data, config) => {
+    const { isButton, limit, firstLimit, tabs } = config
+
+    const dataLength = data.length
+    const maxGroupKey = Math.ceil((dataLength - firstLimit) / limit + 1)
+
+    // Gallery configuration
+    const igConfig = {
+      gap: 5,
+      isConstantSize: true,
+      sizeRange: [150, 600],
+      // useResizeObserver: true,
+      // observeChildren: true,
+      useTransform: true
+      // useRecycle: false
+    }
+
+    const ig = new InfiniteGrid.JustifiedInfiniteGrid(container, igConfig)
+    let isLayoutHidden = false
+
+    // Utility functions
+    const sanitizeString = str => (str && str.replace(/"/g, '&quot;')) || ''
+
+    const createImageItem = item => {
+      const alt = item.alt ? `alt="${sanitizeString(item.alt)}"` : ''
+      const title = item.title ? `title="${sanitizeString(item.title)}"` : ''
+      return `<div class="item">
+        <img src="${item.url}" data-grid-maintained-target="true" ${alt} ${title} />
+      </div>`
+    }
+
+    const getItems = (nextGroupKey, count, isFirst = false) => {
+      const startIndex = isFirst ? (nextGroupKey - 1) * count : (nextGroupKey - 2) * count + firstLimit
+      return data.slice(startIndex, startIndex + count).map(createImageItem)
+    }
+
+    // Load more button
+    const addLoadMoreButton = container => {
+      const button = document.createElement('button')
+      button.innerHTML = `${GLOBAL_CONFIG.infinitegrid.buttonText}<i class="fa-solid fa-arrow-down"></i>`
+
+      button.addEventListener('click', () => {
+        button.remove()
+        btf.setLoading.add(container)
+        appendItems(ig.getGroups().length + 1, limit)
+      }, { once: true })
+
+      container.insertAdjacentElement('afterend', button)
+    }
+
+    const appendItems = (nextGroupKey, count, isFirst) => {
+      ig.append(getItems(nextGroupKey, count, isFirst), nextGroupKey)
+    }
+
+    // Event handlers
+    const handleRenderComplete = e => {
+      if (tabs) {
+        const parentNode = container.parentNode
+        if (isLayoutHidden) {
+          parentNode.style.visibility = 'visible'
+        }
+        if (container.offsetHeight === 0) {
+          parentNode.style.visibility = 'hidden'
+          isLayoutHidden = true
+        }
+      }
+
+      const { updated, isResize, mounted } = e
+      if (!updated.length || !mounted.length || isResize) return
+
+      btf.loadLightbox(container.querySelectorAll('img:not(.medium-zoom-image)'))
+
+      if (ig.getGroups().length === maxGroupKey) {
+        btf.setLoading.remove(container)
+        !tabs && ig.off('renderComplete', handleRenderComplete)
+        return
+      }
+
+      if (isButton) {
+        btf.setLoading.remove(container)
+        addLoadMoreButton(container)
+      }
+    }
+
+    const handleRequestAppend = btf.debounce(e => {
+      const nextGroupKey = (+e.groupKey || 0) + 1
+
+      if (nextGroupKey === 1) appendItems(nextGroupKey, firstLimit, true)
+      else appendItems(nextGroupKey, limit)
+
+      if (nextGroupKey === maxGroupKey) ig.off('requestAppend', handleRequestAppend)
+    }, 300)
+
+    btf.setLoading.add(container)
+    ig.on('renderComplete', handleRenderComplete)
+
+    if (isButton) {
+      appendItems(1, firstLimit, true)
+    } else {
+      ig.on('requestAppend', handleRequestAppend)
+      ig.renderItems()
+    }
+
+    btf.addGlobalFn('pjaxSendOnce', () => ig.destroy())
+  }
+
+  const addJustifiedGallery = async (elements, tabs = false) => {
+    if (!elements.length) return
+
+    const initGallery = async () => {
+      for (const element of elements) {
+        if (btf.isHidden(element) || element.classList.contains('loaded')) continue
+
+        const config = {
+          isButton: element.getAttribute('data-button') === 'true',
+          limit: parseInt(element.getAttribute('data-limit'), 10),
+          firstLimit: parseInt(element.getAttribute('data-first'), 10),
+          tabs
+        }
+
+        const container = element.firstElementChild
+        const content = container.textContent
+        container.textContent = ''
+        element.classList.add('loaded')
+
+        try {
+          const data = element.getAttribute('data-type') === 'url' ? await fetchUrl(content) : JSON.parse(content)
+          runJustifiedGallery(container, data, config)
+        } catch (error) {
+          console.error('Gallery data parsing failed:', error)
+        }
+      }
+    }
+
+    if (typeof InfiniteGrid === 'function') {
+      await initGallery()
+    } else {
+      await btf.getScript(GLOBAL_CONFIG.infinitegrid.js)
+      await initGallery()
+    }
+  }
+
+  /**
+   * rightside scroll percent
+   */
+  const rightsideScrollPercent = currentTop => {
+    const scrollPercent = btf.getScrollPercent(currentTop, document.body)
+    const goUpElement = document.getElementById('go-up')
+
+    if (scrollPercent < 95) {
+      goUpElement.classList.add('show-percent')
+      goUpElement.querySelector('.scroll-percent').textContent = scrollPercent
+    } else {
+      goUpElement.classList.remove('show-percent')
+    }
+  }
+
+  /**
+   * 滾動處理
+   */
+  const scrollFn = () => {
+    const $rightside = document.getElementById('rightside')
+    const innerHeight = window.innerHeight + 56
+    let initTop = 0
+    const $header = document.getElementById('page-header')
+    const isChatBtn = typeof chatBtn !== 'undefined'
+    const isShowPercent = GLOBAL_CONFIG.percent.rightside
+
+    // 檢查文檔高度是否小於視窗高度
+    const checkDocumentHeight = () => {
+      if (document.body.scrollHeight <= innerHeight) {
+        $rightside.classList.add('rightside-show')
+        return true
+      }
+      return false
+    }
+
+    // 如果文檔高度小於視窗高度,直接返回
+    if (checkDocumentHeight()) return
+
+    // find the scroll direction
+    const scrollDirection = currentTop => {
+      const result = currentTop > initTop // true is down & false is up
+      initTop = currentTop
+      return result
+    }
+
+    let flag = ''
+    const scrollTask = btf.throttle(() => {
+      const currentTop = window.scrollY || document.documentElement.scrollTop
+      const isDown = scrollDirection(currentTop)
+      if (currentTop > 56) {
+        if (flag === '') {
+          $header.classList.add('nav-fixed')
+          $rightside.classList.add('rightside-show')
+        }
+
+        if (isDown) {
+          if (flag !== 'down') {
+            $header.classList.remove('nav-visible')
+            isChatBtn && window.chatBtn.hide()
+            flag = 'down'
+          }
+        } else {
+          if (flag !== 'up') {
+            $header.classList.add('nav-visible')
+            isChatBtn && window.chatBtn.show()
+            flag = 'up'
+          }
+        }
+      } else {
+        flag = ''
+        if (currentTop === 0) {
+          $header.classList.remove('nav-fixed', 'nav-visible')
+        }
+        $rightside.classList.remove('rightside-show')
+      }
+
+      isShowPercent && rightsideScrollPercent(currentTop)
+      checkDocumentHeight()
+    }, 300)
+
+    btf.addEventListenerPjax(window, 'scroll', scrollTask, { passive: true })
+  }
+
+  /**
+  * toc,anchor
+  */
+  const scrollFnToDo = () => {
+    const isToc = GLOBAL_CONFIG_SITE.isToc
+    const isAnchor = GLOBAL_CONFIG.isAnchor
+    const $article = document.getElementById('article-container')
+
+    if (!($article && (isToc || isAnchor))) return
+
+    let $tocLink, $cardToc, autoScrollToc, $tocPercentage, isExpand
+
+    if (isToc) {
+      const $cardTocLayout = document.getElementById('card-toc')
+      $cardToc = $cardTocLayout.querySelector('.toc-content')
+      $tocLink = $cardToc.querySelectorAll('.toc-link')
+      $tocPercentage = $cardTocLayout.querySelector('.toc-percentage')
+      isExpand = $cardToc.classList.contains('is-expand')
+
+      // toc元素點擊
+      const tocItemClickFn = e => {
+        const target = e.target.closest('.toc-link')
+        if (!target) return
+
+        e.preventDefault()
+        btf.scrollToDest(btf.getEleTop(document.getElementById(decodeURI(target.getAttribute('href')).replace('#', ''))), 300)
+        if (window.innerWidth < 900) {
+          $cardTocLayout.classList.remove('open')
+        }
+      }
+
+      btf.addEventListenerPjax($cardToc, 'click', tocItemClickFn)
+
+      autoScrollToc = item => {
+        const sidebarHeight = $cardToc.clientHeight
+        const itemOffsetTop = item.offsetTop
+        const itemHeight = item.clientHeight
+        const scrollTop = $cardToc.scrollTop
+        const offset = itemOffsetTop - scrollTop
+        const middlePosition = (sidebarHeight - itemHeight) / 2
+
+        if (offset !== middlePosition) {
+          $cardToc.scrollTop = scrollTop + (offset - middlePosition)
+        }
+      }
+
+      // 處理 hexo-blog-encrypt 事件
+      $cardToc.style.display = 'block'
+    }
+
+    // find head position & add active class
+    const $articleList = $article.querySelectorAll('h1,h2,h3,h4,h5,h6')
+    let detectItem = ''
+
+    const findHeadPosition = top => {
+      if (top === 0) return false
+
+      let currentId = ''
+      let currentIndex = ''
+
+      for (let i = 0; i < $articleList.length; i++) {
+        const ele = $articleList[i]
+        if (top > btf.getEleTop(ele) - 80) {
+          const id = ele.id
+          currentId = id ? '#' + encodeURI(id) : ''
+          currentIndex = i
+        } else {
+          break
+        }
+      }
+
+      if (detectItem === currentIndex) return
+
+      if (isAnchor) btf.updateAnchor(currentId)
+
+      detectItem = currentIndex
+
+      if (isToc) {
+        $cardToc.querySelectorAll('.active').forEach(i => i.classList.remove('active'))
+
+        if (currentId) {
+          const currentActive = $tocLink[currentIndex]
+          currentActive.classList.add('active')
+
+          setTimeout(() => autoScrollToc(currentActive), 0)
+
+          if (!isExpand) {
+            let parent = currentActive.parentNode
+            while (!parent.matches('.toc')) {
+              if (parent.matches('li')) parent.classList.add('active')
+              parent = parent.parentNode
+            }
+          }
+        }
+      }
+    }
+
+    // main of scroll
+    const tocScrollFn = btf.throttle(() => {
+      const currentTop = window.scrollY || document.documentElement.scrollTop
+      if (isToc && GLOBAL_CONFIG.percent.toc) {
+        $tocPercentage.textContent = btf.getScrollPercent(currentTop, $article)
+      }
+      findHeadPosition(currentTop)
+    }, 100)
+
+    btf.addEventListenerPjax(window, 'scroll', tocScrollFn, { passive: true })
+  }
+
+  const handleThemeChange = mode => {
+    const globalFn = window.globalFn || {}
+    const themeChange = globalFn.themeChange || {}
+    if (!themeChange) {
+      return
+    }
+
+    Object.keys(themeChange).forEach(key => {
+      const themeChangeFn = themeChange[key]
+      if (['disqus', 'disqusjs'].includes(key)) {
+        setTimeout(() => themeChangeFn(mode), 300)
+      } else {
+        themeChangeFn(mode)
+      }
+    })
+  }
+
+  /**
+   * Rightside
+   */
+  const rightSideFn = {
+    readmode: () => { // read mode
+      const $body = document.body
+      const newEle = document.createElement('button')
+
+      const exitReadMode = () => {
+        $body.classList.remove('read-mode')
+        newEle.remove()
+        newEle.removeEventListener('click', exitReadMode)
+      }
+
+      $body.classList.add('read-mode')
+      newEle.type = 'button'
+      newEle.className = 'fas fa-sign-out-alt exit-readmode'
+      newEle.addEventListener('click', exitReadMode)
+      $body.appendChild(newEle)
+    },
+    darkmode: () => { // switch between light and dark mode
+      const willChangeMode = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'
+      if (willChangeMode === 'dark') {
+        btf.activateDarkMode()
+        GLOBAL_CONFIG.Snackbar !== undefined && btf.snackbarShow(GLOBAL_CONFIG.Snackbar.day_to_night)
+      } else {
+        btf.activateLightMode()
+        GLOBAL_CONFIG.Snackbar !== undefined && btf.snackbarShow(GLOBAL_CONFIG.Snackbar.night_to_day)
+      }
+      btf.saveToLocal.set('theme', willChangeMode, 2)
+      handleThemeChange(willChangeMode)
+    },
+    'rightside-config': item => { // Show or hide rightside-hide-btn
+      const hideLayout = item.firstElementChild
+      if (hideLayout.classList.contains('show')) {
+        hideLayout.classList.add('status')
+        setTimeout(() => {
+          hideLayout.classList.remove('status')
+        }, 300)
+      }
+
+      hideLayout.classList.toggle('show')
+    },
+    'go-up': () => { // Back to top
+      btf.scrollToDest(0, 500)
+    },
+    'hide-aside-btn': () => { // Hide aside
+      const $htmlDom = document.documentElement.classList
+      const saveStatus = $htmlDom.contains('hide-aside') ? 'show' : 'hide'
+      btf.saveToLocal.set('aside-status', saveStatus, 2)
+      $htmlDom.toggle('hide-aside')
+    },
+    'mobile-toc-button': (p, item) => { // Show mobile toc
+      const tocEle = document.getElementById('card-toc')
+      tocEle.style.transition = 'transform 0.3s ease-in-out'
+
+      const tocEleHeight = tocEle.clientHeight
+      const btData = item.getBoundingClientRect()
+
+      const tocEleBottom = window.innerHeight - btData.bottom - 30
+      if (tocEleHeight > tocEleBottom) {
+        tocEle.style.transformOrigin = `right ${tocEleHeight - tocEleBottom - btData.height / 2}px`
+      }
+
+      tocEle.classList.toggle('open')
+      tocEle.addEventListener('transitionend', () => {
+        tocEle.style.cssText = ''
+      }, { once: true })
+    },
+    'chat-btn': () => { // Show chat
+      window.chatBtnFn()
+    },
+    translateLink: () => { // switch between traditional and simplified chinese
+      window.translateFn.translatePage()
+    }
+  }
+
+  document.getElementById('rightside').addEventListener('click', e => {
+    const $target = e.target.closest('[id]')
+    if ($target && rightSideFn[$target.id]) {
+      rightSideFn[$target.id](e.currentTarget, $target)
+    }
+  })
+
+  /**
+   * menu
+   * 側邊欄sub-menu 展開/收縮
+   */
+  const clickFnOfSubMenu = () => {
+    const handleClickOfSubMenu = e => {
+      const target = e.target.closest('.site-page.group')
+      if (!target) return
+      target.classList.toggle('hide')
+    }
+
+    const menusItems = document.querySelector('#sidebar-menus .menus_items')
+    menusItems && menusItems.addEventListener('click', handleClickOfSubMenu)
+  }
+
+  /**
+   * 手机端目录点击
+   */
+  const openMobileMenu = () => {
+    const toggleMenu = document.getElementById('toggle-menu')
+    if (!toggleMenu) return
+    btf.addEventListenerPjax(toggleMenu, 'click', () => { sidebarFn.open() })
+  }
+
+  /**
+ * 複製時加上版權信息
+ */
+  const addCopyright = () => {
+    const { limitCount, languages } = GLOBAL_CONFIG.copyright
+
+    const handleCopy = (e) => {
+      e.preventDefault()
+      const copyFont = window.getSelection(0).toString()
+      let textFont = copyFont
+      if (copyFont.length > limitCount) {
+        textFont = `${copyFont}\n\n\n${languages.author}\n${languages.link}${window.location.href}\n${languages.source}\n${languages.info}`
+      }
+      if (e.clipboardData) {
+        return e.clipboardData.setData('text', textFont)
+      } else {
+        return window.clipboardData.setData('text', textFont)
+      }
+    }
+
+    document.body.addEventListener('copy', handleCopy)
+  }
+
+  /**
+   * 網頁運行時間
+   */
+  const addRuntime = () => {
+    const $runtimeCount = document.getElementById('runtimeshow')
+    if ($runtimeCount) {
+      const publishDate = $runtimeCount.getAttribute('data-publishDate')
+      $runtimeCount.textContent = `${btf.diffDate(publishDate)} ${GLOBAL_CONFIG.runtime}`
+    }
+  }
+
+  /**
+   * 最後一次更新時間
+   */
+  const addLastPushDate = () => {
+    const $lastPushDateItem = document.getElementById('last-push-date')
+    if ($lastPushDateItem) {
+      const lastPushDate = $lastPushDateItem.getAttribute('data-lastPushDate')
+      $lastPushDateItem.textContent = btf.diffDate(lastPushDate, true)
+    }
+  }
+
+  /**
+   * table overflow
+   */
+  const addTableWrap = () => {
+    const $table = document.querySelectorAll('#article-container table')
+    if (!$table.length) return
+
+    $table.forEach(item => {
+      if (!item.closest('.highlight')) {
+        btf.wrap(item, 'div', { class: 'table-wrap' })
+      }
+    })
+  }
+
+  /**
+   * tag-hide
+   */
+  const clickFnOfTagHide = () => {
+    const hideButtons = document.querySelectorAll('#article-container .hide-button')
+    if (!hideButtons.length) return
+    hideButtons.forEach(item => item.addEventListener('click', e => {
+      const currentTarget = e.currentTarget
+      currentTarget.classList.add('open')
+      addJustifiedGallery(currentTarget.nextElementSibling.querySelectorAll('.gallery-container'))
+    }, { once: true }))
+  }
+
+  const tabsFn = () => {
+    const navTabsElements = document.querySelectorAll('#article-container .tabs')
+    if (!navTabsElements.length) return
+
+    const setActiveClass = (elements, activeIndex) => {
+      elements.forEach((el, index) => {
+        el.classList.toggle('active', index === activeIndex)
+      })
+    }
+
+    const handleNavClick = e => {
+      const target = e.target.closest('button')
+      if (!target || target.classList.contains('active')) return
+
+      const navItems = [...e.currentTarget.children]
+      const tabContents = [...e.currentTarget.nextElementSibling.children]
+      const indexOfButton = navItems.indexOf(target)
+      setActiveClass(navItems, indexOfButton)
+      e.currentTarget.classList.remove('no-default')
+      setActiveClass(tabContents, indexOfButton)
+      addJustifiedGallery(tabContents[indexOfButton].querySelectorAll('.gallery-container'), true)
+    }
+
+    const handleToTopClick = tabElement => e => {
+      if (e.target.closest('button')) {
+        btf.scrollToDest(btf.getEleTop(tabElement), 300)
+      }
+    }
+
+    navTabsElements.forEach(tabElement => {
+      btf.addEventListenerPjax(tabElement.firstElementChild, 'click', handleNavClick)
+      btf.addEventListenerPjax(tabElement.lastElementChild, 'click', handleToTopClick(tabElement))
+    })
+  }
+
+  const toggleCardCategory = () => {
+    const cardCategory = document.querySelector('#aside-cat-list.expandBtn')
+    if (!cardCategory) return
+
+    const handleToggleBtn = e => {
+      const target = e.target
+      if (target.nodeName === 'I') {
+        e.preventDefault()
+        target.parentNode.classList.toggle('expand')
+      }
+    }
+    btf.addEventListenerPjax(cardCategory, 'click', handleToggleBtn, true)
+  }
+
+  const addPostOutdateNotice = () => {
+    const ele = document.getElementById('post-outdate-notice')
+    if (!ele) return
+
+    const { limitDay, messagePrev, messageNext, postUpdate } = JSON.parse(ele.getAttribute('data'))
+    const diffDay = btf.diffDate(postUpdate)
+    if (diffDay >= limitDay) {
+      ele.textContent = `${messagePrev} ${diffDay} ${messageNext}`
+      ele.hidden = false
+    }
+  }
+
+  const lazyloadImg = () => {
+    window.lazyLoadInstance = new LazyLoad({
+      elements_selector: 'img',
+      threshold: 0,
+      data_src: 'lazy-src'
+    })
+
+    btf.addGlobalFn('pjaxComplete', () => {
+      window.lazyLoadInstance.update()
+    }, 'lazyload')
+  }
+
+  const relativeDate = selector => {
+    selector.forEach(item => {
+      item.textContent = btf.diffDate(item.getAttribute('datetime'), true)
+      item.style.display = 'inline'
+    })
+  }
+
+  const justifiedIndexPostUI = () => {
+    const recentPostsElement = document.getElementById('recent-posts')
+    if (!(recentPostsElement && recentPostsElement.classList.contains('masonry'))) return
+
+    const init = () => {
+      const masonryItem = new InfiniteGrid.MasonryInfiniteGrid('.recent-post-items', {
+        gap: { horizontal: 10, vertical: 20 },
+        useTransform: true,
+        useResizeObserver: true
+      })
+      masonryItem.renderItems()
+      btf.addGlobalFn('pjaxCompleteOnce', () => { masonryItem.destroy() }, 'removeJustifiedIndexPostUI')
+    }
+
+    typeof InfiniteGrid === 'function' ? init() : btf.getScript(`${GLOBAL_CONFIG.infinitegrid.js}`).then(init)
+  }
+
+  const unRefreshFn = () => {
+    window.addEventListener('resize', () => {
+      adjustMenu(false)
+      mobileSidebarOpen && btf.isHidden(document.getElementById('toggle-menu')) && sidebarFn.close()
+    })
+
+    const menuMask = document.getElementById('menu-mask')
+    menuMask && menuMask.addEventListener('click', () => { sidebarFn.close() })
+
+    clickFnOfSubMenu()
+    GLOBAL_CONFIG.islazyloadPlugin && lazyloadImg()
+    GLOBAL_CONFIG.copyright !== undefined && addCopyright()
+
+    if (GLOBAL_CONFIG.autoDarkmode) {
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+        if (btf.saveToLocal.get('theme') !== undefined) return
+        e.matches ? handleThemeChange('dark') : handleThemeChange('light')
+      })
+    }
+  }
+
+  const forPostFn = () => {
+    addHighlightTool()
+    addPhotoFigcaption()
+    addJustifiedGallery(document.querySelectorAll('#article-container .gallery-container'))
+    runLightbox()
+    scrollFnToDo()
+    addTableWrap()
+    clickFnOfTagHide()
+    tabsFn()
+  }
+
+  const refreshFn = () => {
+    initAdjust()
+    justifiedIndexPostUI()
+
+    if (GLOBAL_CONFIG_SITE.pageType === 'post') {
+      addPostOutdateNotice()
+      GLOBAL_CONFIG.relativeDate.post && relativeDate(document.querySelectorAll('#post-meta time'))
+    } else {
+      GLOBAL_CONFIG.relativeDate.homepage && relativeDate(document.querySelectorAll('#recent-posts time'))
+      GLOBAL_CONFIG.runtime && addRuntime()
+      addLastPushDate()
+      toggleCardCategory()
+    }
+
+    GLOBAL_CONFIG_SITE.pageType === 'home' && scrollDownInIndex()
+    scrollFn()
+
+    forPostFn()
+    GLOBAL_CONFIG_SITE.pageType !== 'shuoshuo' && btf.switchComments(document)
+    openMobileMenu()
+  }
+
+  btf.addGlobalFn('pjaxComplete', refreshFn, 'refreshFn')
+  refreshFn()
+  unRefreshFn()
+
+  // 處理 hexo-blog-encrypt 事件
+  window.addEventListener('hexo-blog-decrypt', e => {
+    forPostFn()
+    window.translateFn.translateInitialization()
+    Object.values(window.globalFn.encrypt).forEach(fn => {
+      fn()
+    })
+  })
+})
