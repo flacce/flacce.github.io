@@ -9,12 +9,10 @@ function createtime() {
     1 == String(mnum).length && (mnum = "0" + mnum); var seconds = (now - grt) / 1e3 - 86400 * dnum - 3600 * hnum - 60 * mnum, 
     snum = Math.round(seconds); 1 == String(snum).length && (snum = "0" + snum); 
     let currentTimeHtml = ""; 
-    currentTimeHtml = hnum < 18 && hnum >= 9 
-    ? `<img class='boardsign' src='' 
-    title='距离月入25k也就还差一个大佬带我~'><span class='textTip'> <br> 本站居然运行了 ${dnum} 天</span><span id='runtime'> 
-    ${hnum} 小时 ${mnum} 分 ${snum} 秒 </span> <i class='fas fa-heartbeat' style='color:red'></i>` : 
-    `<img class='boardsign' src='' 
-    title='下班了就该开开心心的玩耍，嘿嘿~'><span class='textTip'> <br> 本站居然运行了 ${dnum} 天</span><span id='runtime'> 
-    ${hnum} 小时 ${mnum} 分 ${snum} 秒 </span> <i class='fas fa-heartbeat' style='color:red'></i>`,
+    currentTimeHtml = `<div style='text-align: center; padding: 8px; line-height: 1.4; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 8px; margin: 5px; color: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1);'>
+    <span style='font-size: 14px; font-weight: bold; display: block; margin-bottom: 4px;'>🌟 网站运行统计 🌟</span>
+    <span style='font-size: 13px; opacity: 0.9;'>本站已稳定运行 ${dnum} 天 ${hnum} 小时 ${mnum} 分 ${snum} 秒</span>
+    <i class='fas fa-heartbeat' style='color: #ff6b6b; margin-left: 5px; animation: heartbeat 1.5s ease-in-out infinite;'></i>
+    </div>`;
      document.getElementById("workboard") && (document.getElementById("workboard").innerHTML = currentTimeHtml)
 } setInterval(() => { createtime() }, 250);
