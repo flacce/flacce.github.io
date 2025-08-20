@@ -13,6 +13,11 @@ function createtime() {
     <span style='font-size: 14px; font-weight: bold; display: block; margin-bottom: 4px;'>🌟 网站运行统计 🌟</span>
     <span style='font-size: 13px; opacity: 0.9;'>© 2019 - 2025 By flacce | 本站已稳定运行 ${dnum} 天 ${hnum} 小时 ${mnum} 分 ${snum} 秒</span>
     <i class='fas fa-heartbeat' style='color: #ff6b6b; margin-left: 5px; animation: heartbeat 1.5s ease-in-out infinite;'></i>
+    <div style='font-size: 12px; opacity: 0.8; margin-top: 6px; border-top: 1px solid rgba(255,255,255,0.2); padding-top: 6px;'>
+        <span style='margin-right: 10px;'>👥 总访客: <span id="vercount_value_site_uv">Loading</span></span>
+        <span style='margin-right: 10px;'>📊 总访问: <span id="vercount_value_site_pv">Loading</span></span>
+        <span>📖 本页: <span id="vercount_value_page_pv">Loading</span></span>
+    </div>
     </div>`;
      document.getElementById("workboard") && (document.getElementById("workboard").innerHTML = currentTimeHtml)
 } setInterval(() => { createtime() }, 250);
