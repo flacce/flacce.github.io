@@ -11,7 +11,7 @@ function createtime() {
     let currentTimeHtml = ""; 
     currentTimeHtml = `<div style='text-align: center; padding: 8px; line-height: 1.4; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 8px; margin: 5px; color: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1);'>
     <span style='font-size: 14px; font-weight: bold; display: block; margin-bottom: 4px;'>🌟 网站运行统计 🌟</span>
-    <span style='font-size: 13px; opacity: 0.9;'>本站已稳定运行 ${dnum} 天 ${hnum} 小时 ${mnum} 分 ${snum} 秒</span>
+    <span style='font-size: 13px; opacity: 0.9;'>© 2019 - 2025 By flacce | 本站已稳定运行 ${dnum} 天 ${hnum} 小时 ${mnum} 分 ${snum} 秒</span>
     <i class='fas fa-heartbeat' style='color: #ff6b6b; margin-left: 5px; animation: heartbeat 1.5s ease-in-out infinite;'></i>
     </div>`;
      document.getElementById("workboard") && (document.getElementById("workboard").innerHTML = currentTimeHtml)
