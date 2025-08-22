@@ -1,0 +1,75 @@
+.markdown {
+  line-height: $meow-line-height-post;
+}
+.markdown a:not(.normal) {
+  color: var(--theme-color);
+  position: relative;
+}
+.markdown a:not(.normal):after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -1.2px;
+  display: block;
+  height: 2px;
+  width: 0;
+  background-color: var(--theme-color-light-2);
+  transition: width 0.5s ease;
+}
+.markdown a:not(.normal):hover:after {
+  width: 100%;
+}
+.markdown ul {
+  padding-left: 1em;
+  line-height: 1.8em;
+}
+.markdown ol {
+  padding-left: 1em;
+  line-height: 1.8em;
+}
+.markdown ul li,
+.markdown ol li {
+  margin: 0.5em 0;
+}
+.markdown ul li:has(ul),
+.markdown ol li:has(ul) {
+  margin: 1em 0;
+}
+.markdown ul li:has(ol),
+.markdown ol li:has(ol) {
+  margin: 1em 0;
+}
+.markdown ul ul >li,
+.markdown ol ul >li,
+.markdown ul ol >li,
+.markdown ol ol >li {
+  margin: 0.5em 0;
+}
+.markdown h1:before,
+.markdown h2:before,
+.markdown h3:before,
+.markdown h4:before,
+.markdown h5:before,
+.markdown h6:before {
+  content: '#';
+  margin-right: 0.5rem;
+  color: var(--font-color-light-3);
+  transition: color 0.2s ease-in-out;
+}
+.markdown h1:hover:before,
+.markdown h2:hover:before,
+.markdown h3:hover:before,
+.markdown h4:hover:before,
+.markdown h5:hover:before,
+.markdown h6:hover:before {
+  color: var(--theme-color);
+}
+.markdown img {
+  display: block;
+  margin: 1rem auto;
+  max-width: 100%;
+  object-fit: contain;
+}
+.markdown .img-caption img {
+  margin: 0 auto;
+}

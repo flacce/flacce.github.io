@@ -1,0 +1,66 @@
+.tabs {
+  position: relative;
+  margin: 2rem 0 2.5rem;
+  overflow: hidden;
+}
+.tabs .tabs-nav {
+  width: max-content;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3rem;
+  margin: 0 auto 1rem;
+  padding: 0;
+  border: 1px solid var(--background-color-grey);
+  border-radius: 0.8rem;
+  background: var(--background-color-grey-transparent);
+  box-shadow: var(--meow-box-shadow);
+}
+.tabs .tabs-nav .tab {
+  padding: 0.7rem 0.8rem;
+  transition: all 0.3s ease;
+  border-radius: 0.8rem;
+  font-size: 1em;
+}
+.tabs .tabs-nav .tab.active {
+  background: var(--background-color);
+  border: 1px solid var(--background-color-grey);
+  color: var(--theme-color);
+  cursor: default;
+}
+.tabs .tabs-nav .tab:not(.active):hover {
+  color: var(--theme-color);
+}
+.tabs .tabs-nav.no-default ~ .tabs-content {
+  display: none;
+}
+.tabs .tabs-content {
+  border: 1px solid var(--card-border-color);
+  border-radius: 0.8rem;
+}
+.tabs .tabs-item-content {
+  position: relative;
+  display: none;
+  padding: 0.3rem 1.2rem;
+  animation: show-up 0.3s ease-in;
+}
+.tabs .tabs-item-content.active {
+  display: block;
+}
+.tabs .tabs-to-top {
+  width: 100%;
+  padding-right: 1.5rem;
+  text-align: right;
+}
+.tabs .tabs-to-top button {
+  filter: invert(80%);
+}
+.tabs .tabs-to-top button svg {
+  height: 1.5rem;
+  animation: bounce 0.8s ease infinite;
+}
+.tabs .tabs-to-top button:hover {
+  filter: invert(0);
+}
+meow-smallscreen()

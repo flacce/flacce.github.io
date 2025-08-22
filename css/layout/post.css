@@ -1,0 +1,89 @@
+.post-container {
+  width: 100%;
+  height: max-content;
+  padding: 1.8rem 0;
+}
+.post-main {
+  width: 95%;
+  max-width: var(--meow-main-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.post-content {
+  width: 100%;
+  max-width: var(--meow-page-width);
+  height: max-content;
+  padding: 2.2rem 2.5rem;
+  background-color: var(--background-color-page);
+  border-radius: 1rem;
+  box-shadow: var(--meow-card-shadow);
+  animation: show-up 0.6s ease-out;
+  transition: background-color 0.2s ease-in;
+}
+.post-title {
+  margin: 0 0 1.2rem 0;
+  line-height: 2.5rem;
+  font-size: $font-size-post-title;
+  font-weight: bold;
+  text-align: center;
+  animation: show-up 1s ease;
+}
+.post-author {
+  font-size: 1.15rem;
+  text-align: center;
+}
+.post {
+  margin: 2.8rem 0 5rem;
+  font-size: 17px;
+}
+.post[indent="true"] >p {
+  text-indent: 2em;
+}
+.post-tail-tags {
+  margin: 1.5rem 0;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.5rem;
+  user-select: none;
+}
+.post-tail-tags a {
+  color: var(--font-color-light-2);
+  border-radius: 0.65rem;
+  position: relative;
+  padding: 0.1rem 0.5rem;
+  transition: color 0.25s ease;
+  z-index: 1;
+}
+.post-tail-tags a:before {
+  content: '#';
+  margin-right: 0.1rem;
+}
+.post-tail-tags a:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  border-radius: 0.5rem;
+  background: var(--theme-color);
+  z-index: -1;
+  transition: all 0.25s ease-in;
+}
+.post-tail-tags a:hover {
+  color: var(--link-hover-font-color);
+}
+.post-tail-tags a:hover:after {
+  width: 100%;
+}
+.fiction-status {
+  text-align: center;
+  color: var(--font-color-light-3);
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 2rem 0;
+}
+meow-smallscreen()

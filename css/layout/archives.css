@@ -1,0 +1,173 @@
+.archive-year-title a,
+.archive-month-title a {
+  color: var(--font-color);
+}
+.archive-year-title a:hover,
+.archive-month-title a:hover {
+  color: var(--theme-color);
+}
+.archive-year {
+  margin-bottom: 2.5rem;
+}
+.archive-year-title {
+  padding: 0.5rem 0;
+  margin-bottom: 1.8rem;
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(to right, var(--font-color-light-2), rgba(0,0,0,0)) 1;
+}
+.archive-year-title a {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-right: 0.8rem;
+}
+.archive-year-title span {
+  font-size: 0.9rem;
+  color: var(--font-color-light-1);
+}
+.archive-month {
+  margin-bottom: 2rem;
+}
+.archive-month-title {
+  margin-bottom: 1.3rem;
+}
+.archive-month-title a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-right: 0.7rem;
+}
+.archive-month-title span {
+  font-size: 0.9rem;
+  color: var(--font-color-light-1);
+}
+.archive-posts-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.2rem 1rem;
+  user-select: none;
+}
+.archive-post {
+  width: calc(50% - 0.5rem);
+  height: 5rem;
+  border-radius: 0.6rem;
+  border: 1px solid var(--card-border-color);
+  position: relative;
+  overflow: hidden;
+}
+.archive-post a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 1rem 1.2rem;
+  color: var(--font-color);
+}
+.archive-post:hover {
+  box-shadow: var(--meow-box-shadow);
+}
+.archive-post[archive-style="normal"]:after {
+  content: "";
+  background-image: url("/assets/images/Hexo-Theme-MEOW.png");
+  background-size: cover;
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 13%;
+  height: 85%;
+  opacity: 0.8;
+  transition: all 0.5s ease;
+}
+.archive-post[archive-style="normal"]:hover:after {
+  transform: rotate(18deg);
+  opacity: 1;
+}
+.archive-post[archive-style="cover"]:hover .archive-post-cover {
+  transform: translateY(-25%);
+}
+.archive-post[archive-style="cover"]:hover .archive-post-cover:after {
+  width: 0;
+}
+.archive-post[archive-style="cover"]:hover .archive-post-title,
+.archive-post[archive-style="cover"]:hover .archive-post-date {
+  opacity: 0;
+}
+.archive-post[archive-style="cover"] .archive-post-title {
+  width: 100%;
+}
+.archive-post[archive-style="cover"] .archive-post-cover {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  transform: translateY(-45%);
+  left: 0;
+  z-index: -1;
+  transition: transform 0.5s ease;
+}
+.archive-post[archive-style="cover"] .archive-post-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.archive-post[archive-style="cover"] .archive-post-cover:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-color-transparent-1);
+  transition: width 0.6s ease;
+}
+.archive-post[archive-style="normal"]:hover .archive-post-cover {
+  width: 100%;
+}
+.archive-post[archive-style="normal"]:hover .archive-post-title {
+  color: var(--link-hover-font-color);
+  white-space: normal;
+  font-size: 1.25rem;
+  text-shadow: var(--meow-text-shadow-light);
+  max-height: 2.85rem;
+}
+.archive-post[archive-style="normal"]:hover .archive-post-date {
+  display: none;
+}
+.archive-post[archive-style="normal"] .archive-post-title {
+  width: 85%;
+}
+.archive-post[archive-style="normal"] .archive-post-cover {
+  position: absolute;
+  width: 0;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-color: var(--theme-color-light-3);
+  transition: width 0.6s ease;
+}
+.archive-post-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-bottom: 0.3rem;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+.archive-post-encrypt {
+  display: inline-flex;
+  align-items: center;
+}
+.archive-post-encrypt .icon {
+  height: 1.1rem;
+}
+.archive-post-date {
+  color: var(--font-color-light-1);
+  font-size: 0.9rem;
+  white-space: nowrap;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+meow-smallscreen()

@@ -1,0 +1,83 @@
+.tag-container {
+  width: 90%;
+  margin: 0 auto;
+  user-select: none;
+}
+.tag-container[tag-style="cloud"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.tag-container[tag-style="cloud"] a {
+  white-space: nowrap;
+  color: var(--font-color);
+  position: relative;
+  padding: 0 0.1rem;
+}
+.tag-container[tag-style="cloud"] a:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  display: block;
+  height: 2.5px;
+  width: 0;
+  background-color: #FFB347;
+  transition: width 0.5s ease;
+}
+.tag-container[tag-style="cloud"] a:hover {
+  font-weight: bold;
+}
+.tag-container[tag-style="cloud"] a:hover:after {
+  width: 100%;
+}
+.tags-list {
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.tags-list li {
+  list-style: none;
+  padding: 0.35rem 1.2rem;
+  border: 1px solid var(--card-border-color);
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  transition: all 0.5s ease;
+}
+.tags-list li:hover {
+  background-color: var(--theme-color);
+  box-shadow: var(--meow-box-shadow);
+}
+.tags-list li:hover a {
+  color: var(--link-hover-font-color);
+}
+.tags-list li:hover span {
+  color: var(--link-hover-font-color);
+}
+.tags-list a {
+  color: var(--font-color);
+  font-size: 1.25rem;
+  white-space: nowrap;
+}
+.tags-list a:before {
+  content: '#';
+  margin-right: 0.1rem;
+}
+.tags-list span {
+  color: var(--font-color-light-2);
+}
+.tags-count {
+  font-size: 0.9rem;
+  vertical-align: super;
+  margin-left: 0.1rem;
+}
+meow-smallscreen()

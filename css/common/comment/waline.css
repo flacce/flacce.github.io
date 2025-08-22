@@ -1,0 +1,32 @@
+:root {
+  --waline-theme-color: $theme-color !important;
+  --waline-active-color: $theme-color-light-1 !important;
+  --waline-badge-color: $theme-color !important;
+meow-smallscreen()
+}
+:root body[data-mode='dark'] {
+  --waline-bg-color: $dark-background-color-page !important;
+  --waline-color: $dark-font-color !important;
+  --waline-theme-color: $dark-theme-color !important;
+  --waline-active-color: $dark-theme-color-light-1 !important;
+  --waline-badge-color: $dark-theme-color !important;
+  --waline-info-color: $dark-font-color-light-2;
+  --waline-info-bg-color: $dark-background-color-grey-light-2;
+}
+div[data-waline] p {
+  margin: 0;
+}
+.wl-header label,
+.wl-header input {
+  font-size: 0.85em !important;
+}
+.wl-card .wl-head .wl-nick {
+  color: $font-color-light-1;
+}
+.wl-card .wl-badge {
+  line-height: 1.5;
+  margin-inline-end: 0.5em;
+}
+body[data-mode='dark'] .wl-card .wl-head .wl-nick {
+  color: $dark-font-color-light-1;
+}

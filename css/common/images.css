@@ -1,0 +1,37 @@
+.icon {
+  height: 1rem;
+  object-fit: contain;
+}
+.box-icon {
+  height: 1.45rem;
+}
+.img-caption {
+  margin: 1rem auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+.img-caption figcaption {
+  text-align: center;
+  color: var(--font-color-light-1);
+  font-size: 0.9em;
+}
+img[data-lazy-src] {
+  transition: all 0.3s ease-in;
+}
+img[data-lazy-src]:not(.loaded) {
+  filter: blur(0.8rem) brightness(1) !important;
+}
+img:not(.icon):not([no-view]):not(.noview) {
+  cursor: pointer;
+}
+.view-image-close__full {
+  background: var(--background-color-grey-transparent) !important;
+}
+body[data-mode="dark"] img:not(.icon) {
+  filter: brightness(90%);
+}
+.view-image img {
+  filter: brightness(100%) !important;
+}
