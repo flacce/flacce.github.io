@@ -1,5 +1,5 @@
-@import url("https://fonts.font.im/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap");
-@import url("https://fonts.font.im/css2?family=Noto+Serif+SC:wght@400;500;700&display=swap");
+@import url("/assets/fonts/vivoSans-Regular/result.css");
+@import url("https://registry.npmmirror.com/@chinese-fonts/mkzyt/2.0.1/files/dist/猫啃珠圆体/result.css");
 @import url("/assets/fonts/SFMonoRegular/result.css");
 body[data-mode='light'] {
   --theme-color: #ffb347;
@@ -70,7 +70,7 @@ body[data-mode='dark'] {
   --meow-main-width: 1400px;
   --meow-page-width: 1100px;
   --meow-navbar-height: 60px;
-  --meow-font-default: 'Noto Sans SC', 'Microsoft YaHei', Sans-serif, Serif;
-  --meow-font-title: 'Noto Serif SC', 'Microsoft YaHei', Sans-serif, Serif;
-  --meow-font-code: 'SF Mono', 'JetBrains Mono', 'Fira Code', Courier, Consolas, monospace;
+  --meow-font-default: 'vivo Sans', 'PingFang SC', 'Microsoft YaHei', Sans-serif, Serif;
+  --meow-font-title: 'MaokenZhuyuanTi', 'vivo Sans', 'PingFang SC', 'Microsoft YaHei', Sans-serif, Serif;
+  --meow-font-code: 'SF Mono', 'vivo Sans', 'PingFang SC', 'Microsoft YaHei', Courier, Consolas, Sans-serif;
 }
