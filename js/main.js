@@ -53,7 +53,13 @@ const refreshFn = () => {
   refresh();
 };
 
-document.addEventListener("DOMContentLoaded", initMain);
+// 使用 requestAnimationFrame 确保在浏览器绘制之前执行
+window.addEventListener("load", () => {
+  // 延迟执行以避免强制排版
+  setTimeout(() => {
+    initMain();
+  }, 10);
+});
 
 if (GLOBALCONFIG.encrypt) {
   window.addEventListener("hexo-blog-decrypt", refreshFn);
