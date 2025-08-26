@@ -56,11 +56,8 @@ if (window.location.hostname === 'www.cvv.asia') {
     // 更改背景图片
     var style = document.createElement('style');
     style.innerHTML = `
-      body[data-mode='dark'] {
-        --banner-background: url("https://t.alcy.cc/ycy") !important;
-      }
-      body[data-mode='light'] {
-        --banner-background: url("https://t.alcy.cc/ycy") !important;
+      #home-banner[bg-style="fixed"] {
+        background: url("https://t.alcy.cc/ycy") center top / cover no-repeat !important;
       }
     `;
     document.head.appendChild(style);

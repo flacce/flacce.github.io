@@ -9,7 +9,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s2.loli.net/2022/10/04/SkAn9RQpqC4tVW5.png">
 <meta property="article:published_time" content="2022-10-20T14:01:06.000Z">
-<meta property="article:modified_time" content="2025-08-26T05:33:05.613Z">
+<meta property="article:modified_time" content="2025-08-26T05:34:17.163Z">
 <meta property="article:author" content="Flacce">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://s2.loli.net/2022/10/04/SkAn9RQpqC4tVW5.png"><meta name="robots" content="index,follow"/><meta name="googlebot" content="index,follow"/><meta name="revisit-after" content="1 days"/><title>Java SE笔记（六） | Flacce</title><link rel="shortcut icon" href="https://f.whhhh.eu.org/favicon.png"><link rel="preconnect" href="/assets"/><link rel="preconnect" href="https://registry.npmmirror.com"/><link rel="preconnect" href="assets"/>
@@ -560,11 +560,8 @@ if (window.location.hostname === 'www.cvv.asia') {
     // 更改背景图片
     var style = document.createElement('style');
     style.innerHTML = `
-      body[data-mode='dark'] {
-        --banner-background: url("https://t.alcy.cc/ycy") !important;
-      }
-      body[data-mode='light'] {
-        --banner-background: url("https://t.alcy.cc/ycy") !important;
+      #home-banner[bg-style="fixed"] {
+        background: url("https://t.alcy.cc/ycy") center top / cover no-repeat !important;
       }
     `;
     document.head.appendChild(style);
