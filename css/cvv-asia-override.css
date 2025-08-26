@@ -1,0 +1,26 @@
+/* 专门为www.cvv.asia域名覆盖背景图片 */
+body[data-mode='light'] {
+  --banner-background: url("https://t.alcy.cc/ycy") !important;
+}
+
+body[data-mode='dark'] {
+  --banner-background: url("https://t.alcy.cc/ycy") !important;
+}
+
+:root {
+  --banner-background: url("https://t.alcy.cc/ycy") !important;
+}
+
+/* 确保所有banner相关元素使用指定背景 */
+#home-banner,
+.banner,
+[class*="banner"],
+[id*="banner"] {
+  background-image: url("https://t.alcy.cc/ycy") !important;
+  background: url("https://t.alcy.cc/ycy") center top / cover no-repeat !important;
+}
+
+/* 阻止其他背景图片加载 */
+*[style*="f.whhhh.eu.org"] {
+  background-image: url("https://t.alcy.cc/ycy") !important;
+}
