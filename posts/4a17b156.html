@@ -12,7 +12,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.seovx.com/d/?mom=302">
 <meta property="article:published_time" content="2022-10-11T00:00:00.000Z">
-<meta property="article:modified_time" content="2025-08-26T07:02:56.302Z">
+<meta property="article:modified_time" content="2025-08-26T07:04:42.073Z">
 <meta property="article:author" content="Flacce">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://cdn.seovx.com/d/?mom=302"><meta name="robots" content="index,follow"/><meta name="googlebot" content="index,follow"/><meta name="revisit-after" content="1 days"/><title>Hello World | Flacce</title><link rel="shortcut icon" href="https://f.whhhh.eu.org/favicon.png"><link rel="preconnect" href="/assets"/><link rel="preconnect" href="https://registry.npmmirror.com"/><link rel="preconnect" href="assets"/>
@@ -69,12 +69,40 @@
 document.body.setAttribute('data-mode', localStorage.getItem('color-mode'));
 
 // 检测域名并设置特殊背景
+// 检测域名并设置特殊背景
 if (window.location.hostname === 'www.cvv.asia') {
   document.body.setAttribute('data-cvv-domain', 'true');
   console.log('CVV域名检测成功，已设置特殊背景');
 } else {
   console.log('当前域名:', window.location.hostname);
 }
+
+// 备用时间显示初始化（防止模块加载失败）
+setTimeout(() => {
+  const runtime = document.getElementById('runtime');
+  if (runtime && !runtime.textContent.includes('天')) {
+    if (!runtime.getAttribute('data-original-text')) {
+      runtime.setAttribute('data-original-text', '🌻陪伴你已经');
+    }
+    
+    const startDate = runtime.getAttribute('data-startdate');
+    if (startDate) {
+      const start = new Date(startDate);
+      const updateTime = () => {
+        const now = new Date();
+        const diff = now.getTime() - start.getTime();
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        runtime.textContent = `🌻陪伴你已经${days}天 ${hours}时 ${minutes}分 ${seconds}秒`;
+        setTimeout(updateTime, 1000);
+      };
+      updateTime();
+      console.log('备用时间显示已启动');
+    }
+  }
+}, 2000);
 </script>
 <script src="/js/theme/tools/utils.js"></script>
 

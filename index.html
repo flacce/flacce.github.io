@@ -82,12 +82,40 @@ Java程序基础首先我们还是从最基本的Java程序基础开始讲解。
 document.body.setAttribute('data-mode', localStorage.getItem('color-mode'));
 
 // 检测域名并设置特殊背景
+// 检测域名并设置特殊背景
 if (window.location.hostname === 'www.cvv.asia') {
   document.body.setAttribute('data-cvv-domain', 'true');
   console.log('CVV域名检测成功，已设置特殊背景');
 } else {
   console.log('当前域名:', window.location.hostname);
 }
+
+// 备用时间显示初始化（防止模块加载失败）
+setTimeout(() => {
+  const runtime = document.getElementById('runtime');
+  if (runtime && !runtime.textContent.includes('天')) {
+    if (!runtime.getAttribute('data-original-text')) {
+      runtime.setAttribute('data-original-text', '🌻陪伴你已经');
+    }
+    
+    const startDate = runtime.getAttribute('data-startdate');
+    if (startDate) {
+      const start = new Date(startDate);
+      const updateTime = () => {
+        const now = new Date();
+        const diff = now.getTime() - start.getTime();
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        runtime.textContent = `🌻陪伴你已经${days}天 ${hours}时 ${minutes}分 ${seconds}秒`;
+        setTimeout(updateTime, 1000);
+      };
+      updateTime();
+      console.log('备用时间显示已启动');
+    }
+  }
+}, 2000);
 </script>
 <script src="/js/theme/tools/utils.js"></script>
 
