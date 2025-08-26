@@ -50,15 +50,29 @@ Java程序基础首先我们还是从最基本的Java程序基础开始讲解。
     if (container) {
       container.innerHTML = '<span>｜</span> <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备2025158906号</a>';
     }
-    // 确保完全覆盖默认背景图片
+    // 完全阻止默认背景图片加载，只使用指定背景
     var style = document.createElement('style');
     style.innerHTML = `
-      :root { --banner-background: url("https://t.alcy.cc/ycy") !important; }
-      body[data-mode="dark"] { --banner-background: url("https://t.alcy.cc/ycy") !important; }
-      body[data-mode="light"] { --banner-background: url("https://t.alcy.cc/ycy") !important; }
-      #home-banner, .banner, [class*="banner"] {
+      :root { 
+        --banner-background: url("https://t.alcy.cc/ycy") !important; 
+      }
+      body[data-mode="dark"] { 
+        --banner-background: url("https://t.alcy.cc/ycy") !important; 
+      }
+      body[data-mode="light"] { 
+        --banner-background: url("https://t.alcy.cc/ycy") !important; 
+      }
+      /* 阻止所有可能的默认背景图片 */
+      * {
+        background-image: none !important;
+      }
+      #home-banner, .banner, [class*="banner"], [id*="banner"] {
         background-image: url("https://t.alcy.cc/ycy") !important;
         background: url("https://t.alcy.cc/ycy") center top / cover no-repeat !important;
+      }
+      /* 阻止从f.whhhh.eu.org加载的图片 */
+      *[style*="f.whhhh.eu.org"] {
+        background-image: url("https://t.alcy.cc/ycy") !important;
       }
     `;
     document.head.appendChild(style);
