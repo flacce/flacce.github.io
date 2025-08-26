@@ -9,7 +9,7 @@ Java程序基础..."/><meta name="copyright" content="Flacce"/><meta name="theme
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s2.loli.net/2022/09/16/ymtrNQlPu9Loh27.png">
 <meta property="article:published_time" content="2022-10-20T14:01:02.000Z">
-<meta property="article:modified_time" content="2025-08-26T06:55:27.094Z">
+<meta property="article:modified_time" content="2025-08-26T07:02:56.301Z">
 <meta property="article:author" content="Flacce">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://s2.loli.net/2022/09/16/ymtrNQlPu9Loh27.png"><meta name="robots" content="index,follow"/><meta name="googlebot" content="index,follow"/><meta name="revisit-after" content="1 days"/><title>JavaSE笔记（二） | Flacce</title><link rel="shortcut icon" href="https://f.whhhh.eu.org/favicon.png"><link rel="preconnect" href="/assets"/><link rel="preconnect" href="https://registry.npmmirror.com"/><link rel="preconnect" href="assets"/>
@@ -1036,7 +1036,7 @@ Java程序基础..."/><meta name="copyright" content="Flacce"/><meta name="theme
   },
   encrypt: false,
 };
-</script><script></script><script>if (!localStorage.getItem('color-mode')) {
+</script><script>if (!localStorage.getItem('color-mode')) {
   localStorage.setItem('color-mode', 'dark' || 'light');
 }
 document.body.setAttribute('data-mode', localStorage.getItem('color-mode'));
@@ -1044,6 +1044,9 @@ document.body.setAttribute('data-mode', localStorage.getItem('color-mode'));
 // 检测域名并设置特殊背景
 if (window.location.hostname === 'www.cvv.asia') {
   document.body.setAttribute('data-cvv-domain', 'true');
+  console.log('CVV域名检测成功，已设置特殊背景');
+} else {
+  console.log('当前域名:', window.location.hostname);
 }
 </script>
 <script src="/js/theme/tools/utils.js"></script>

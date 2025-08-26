@@ -44,7 +44,7 @@
   },
   encrypt: false,
 };
-</script><script></script><script>if (!localStorage.getItem('color-mode')) {
+</script><script>if (!localStorage.getItem('color-mode')) {
   localStorage.setItem('color-mode', 'dark' || 'light');
 }
 document.body.setAttribute('data-mode', localStorage.getItem('color-mode'));
@@ -52,6 +52,9 @@ document.body.setAttribute('data-mode', localStorage.getItem('color-mode'));
 // 检测域名并设置特殊背景
 if (window.location.hostname === 'www.cvv.asia') {
   document.body.setAttribute('data-cvv-domain', 'true');
+  console.log('CVV域名检测成功，已设置特殊背景');
+} else {
+  console.log('当前域名:', window.location.hostname);
 }
 </script>
 <script src="/js/theme/tools/utils.js"></script>
