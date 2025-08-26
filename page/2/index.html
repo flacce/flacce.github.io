@@ -26,8 +26,18 @@ if (window.location.hostname === 'www.cvv.asia') {
     // 更改背景图片
     var bannerElement = document.getElementById('home-banner');
     if (bannerElement) {
-      // 更新CSS变量
-      document.documentElement.style.setProperty('--banner-background', 'url("https://t.alcy.cc/ycy")', 'important');
+      // 创建样式标签来覆盖CSS变量
+      var style = document.createElement('style');
+      style.innerHTML = `
+        body[data-mode='dark'] {
+          --banner-background: url("https://t.alcy.cc/ycy") !important;
+        }
+        body[data-mode='light'] {
+          --banner-background: url("https://t.alcy.cc/ycy") !important;
+        }
+      `;
+      document.head.appendChild(style);
+      
       // 直接设置元素背景以确保生效
       bannerElement.style.setProperty('background-image', 'url("https://t.alcy.cc/ycy")', 'important');
       bannerElement.style.setProperty('background-size', 'cover', 'important');
