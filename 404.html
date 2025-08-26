@@ -22,26 +22,16 @@ if (window.location.hostname === 'www.cvv.asia') {
     }
     
     // 更改背景图片
-    var bannerElement = document.getElementById('home-banner');
-    if (bannerElement) {
-      // 创建样式标签来覆盖CSS变量
-      var style = document.createElement('style');
-      style.innerHTML = `
-        body[data-mode='dark'] {
-          --banner-background: url("https://t.alcy.cc/ycy") !important;
-        }
-        body[data-mode='light'] {
-          --banner-background: url("https://t.alcy.cc/ycy") !important;
-        }
-      `;
-      document.head.appendChild(style);
-      
-      // 直接设置元素背景以确保生效
-      bannerElement.style.setProperty('background-image', 'url("https://t.alcy.cc/ycy")', 'important');
-      bannerElement.style.setProperty('background-size', 'cover', 'important');
-      bannerElement.style.setProperty('background-position', 'center top', 'important');
-      bannerElement.style.setProperty('background-repeat', 'no-repeat', 'important');
-    }
+    var style = document.createElement('style');
+    style.innerHTML = `
+      body[data-mode='dark'] {
+        --banner-background: url("https://t.alcy.cc/ycy") !important;
+      }
+      body[data-mode='light'] {
+        --banner-background: url("https://t.alcy.cc/ycy") !important;
+      }
+    `;
+    document.head.appendChild(style);
   });
 }
 </script></div><div id="footer-pageview"><div id="container_site_pv"><span>🔥总访问量</span><span id="vercount_value_site_pv"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 6l0 -3" /><path d="M16.25 7.75l2.15 -2.15" /><path d="M18 12l3 0" /><path d="M16.25 16.25l2.15 2.15" /><path d="M12 18l0 3" /><path d="M7.75 16.25l-2.15 2.15" /><path d="M6 12l-3 0" /><path d="M7.75 7.75l-2.15 -2.15" /></svg></span></div><div id="container_site_uv"><span>🐈访客人数</span><span id="vercount_value_site_uv"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 6l0 -3" /><path d="M16.25 7.75l2.15 -2.15" /><path d="M18 12l3 0" /><path d="M16.25 16.25l2.15 2.15" /><path d="M12 18l0 3" /><path d="M7.75 16.25l-2.15 2.15" /><path d="M6 12l-3 0" /><path d="M7.75 7.75l-2.15 -2.15" /></svg></span></div></div></div></footer><div class="scripts"><script>const GLOBALCONFIG = {
