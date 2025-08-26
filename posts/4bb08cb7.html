@@ -1,0 +1,357 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><meta name="author" content="Flacce"/><meta name="description" content="image-20220916142151904
+新手入门篇**注意：**开始学习 JavaSE 之前建议学习的前置课程《C 语言程序设计》《数据结构》《操作系统》《计算机组成原理》
+欢迎各位小伙伴来到 JavaSE 视频教程，期待与各位小伙伴共度这一旅程！视频中所有的文档、资料，都可以直接在视..."/><meta name="copyright" content="Flacce"/><meta name="theme-color" content="#FFB347"/><meta name="format-detection" content="telephone=no"/><meta name="keywords" content="Hexo Theme MEOW"/><meta name="mobile-web-app-capable" content="yes"/><meta name="apple-mobile-web-app-capable" content="yes"/><meta name="apple-touch-fullscreen" content="yes"/><meta name="application-name" content="Java SE笔记（一） | Flacce"/><meta name="apple-mobile-web-app-title" content="Java SE笔记（一） | Flacce"/><meta name="apple-mobile-web-app-status-bar-style" content="#FFB347"/><link rel="canonical" href="https://www.cvv.asia/posts/4bb08cb7.html"/><meta name="description" content="image-20220916142151904 新手入门篇**注意：**开始学习 JavaSE 之前建议学习的前置课程《C 语言程序设计》《数据结构》《操作系统》《计算机组成原理》 欢迎各位小伙伴来到 JavaSE 视频教程，期待与各位小伙伴共度这一旅程！视频中所有的文档、资料，都可以直接在视...">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java SE笔记（一） | Flacce">
+<meta property="og:url" content="https://www.cvv.asia/posts/4bb08cb7.html">
+<meta property="og:site_name" content="Flacce">
+<meta property="og:description" content="image-20220916142151904 新手入门篇**注意：**开始学习 JavaSE 之前建议学习的前置课程《C 语言程序设计》《数据结构》《操作系统》《计算机组成原理》 欢迎各位小伙伴来到 JavaSE 视频教程，期待与各位小伙伴共度这一旅程！视频中所有的文档、资料，都可以直接在视...">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s2.loli.net/2022/09/16/XZGlpWmeO7T8ft2.png">
+<meta property="article:published_time" content="2022-10-20T14:01:01.000Z">
+<meta property="article:modified_time" content="2025-08-26T06:04:50.566Z">
+<meta property="article:author" content="Flacce">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://s2.loli.net/2022/09/16/XZGlpWmeO7T8ft2.png"><meta name="robots" content="index,follow"/><meta name="googlebot" content="index,follow"/><meta name="revisit-after" content="1 days"/><title>Java SE笔记（一） | Flacce</title><link rel="shortcut icon" href="https://f.whhhh.eu.org/favicon.png"><link rel="preconnect" href="/assets"/><link rel="preconnect" href="https://registry.npmmirror.com"/><link rel="preconnect" href="assets"/>
+<link rel="stylesheet" href="/css/style.css">
+<link rel="prefetch" href="/"/><link rel="prefetch" href="/archives"/><link rel="prefetch" href="/tags"/><meta name="generator" content="Hexo 7.3.0"></head><body bg-style="none"><header><div id="navbar"><div id="nav-info"><a id="site-icon" href="/" title="主页"><img src="https://f.whhhh.eu.org/favicon.png" alt="Logo"/></a><a id="site-name" href="/" title="主页"><div>Flacce</div><img src="/assets/images/svg/uc/uc-home.svg" class="icon noview" alt="Icon"></a></div><div id="nav-menu"><div class="menu-item"><a href="javascript:void(0);"><img src="/assets/images/svg/uc/uc-article.svg" class="icon noview" alt="Icon"><span>文章</span></a><ul class="sub-menu-item"><li><a href="/archives"><img src="/assets/images/svg/uc/uc-archive.svg" class="icon noview" alt="Icon"><span>归档</span></a></li><li><a href="/categories"><img src="/assets/images/svg/uc/uc-category.svg" class="icon noview" alt="Icon"><span>分类</span></a></li><li><a href="/tags"><img src="/assets/images/svg/uc/uc-tag.svg" class="icon noview" alt="Icon"><span>标签</span></a></li></ul></div><div class="menu-item"><a href="/about"><img src="/assets/images/svg/uc/uc-about.svg" class="icon noview" alt="Icon"><span>关于</span></a></div></div><div id="nav-function"><div id="menu-btn"><a href="javascript:void(0);" title="打开菜单"><img src="/assets/images/svg/uc/uc-menu.svg" class="icon noview" alt="Icon"></a></div></div></div></header><div id="menu-aside"><div id="menu-aside-container"><div id="menu-aside-info"><a href="/" title="主页"><img src="https://f.whhhh.eu.org/favicon.png" alt="Logo"/></a><a href="/" title="主页">Flacce</a></div><div class="menu-aside-item"><a href="javascript:void(0);"><img src="/assets/images/svg/uc/uc-article.svg" class="icon noview" alt="Icon"><span>文章</span></a><ul class="menu-aside-sub-item"><li><a href="/archives"><img src="/assets/images/svg/uc/uc-archive.svg" class="icon noview" alt="Icon"><span>归档</span></a></li><li><a href="/categories"><img src="/assets/images/svg/uc/uc-category.svg" class="icon noview" alt="Icon"><span>分类</span></a></li><li><a href="/tags"><img src="/assets/images/svg/uc/uc-tag.svg" class="icon noview" alt="Icon"><span>标签</span></a></li></ul></div><div class="menu-aside-item"><a href="/about"><img src="/assets/images/svg/uc/uc-about.svg" class="icon noview" alt="Icon"><span>关于</span></a></div><hr/></div></div><main><div class="banner"><div class="banner-info"><div class="banner-avatar"><img src="https://oss.itbaima.cn/hub/213/image-202508226i3attppg.jpeg" alt="Avatar"/></div><div class="banner-title">「 Flacce 」</div></div></div><div class="post-container"><div class="post-main"><div class="post-content"><h1 class="post-title">Java SE笔记（一）</h1><div class="post-author"><span>作者: Flacce</span></div><div class="post-meta"><div class="post-info"><div class="post-date"><div class="post-pubdate"><img src="/assets/images/svg/ta/ta-pubdate.svg" class="icon noview" alt="Icon"><span>发表于2022-10-20</span></div><div class="post-update"><img src="/assets/images/svg/ta/ta-update.svg" class="icon noview" alt="Icon"><span>更新于2025-08-26</span></div></div><div class="post-read"><div class="post-pageview"><img src="/assets/images/svg/ta/ta-fire.svg" class="icon noview" alt="Icon"><span>访问量: </span><span id="vercount_value_page_pv"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 6l0 -3" /><path d="M16.25 7.75l2.15 -2.15" /><path d="M18 12l3 0" /><path d="M16.25 16.25l2.15 2.15" /><path d="M12 18l0 3" /><path d="M7.75 16.25l-2.15 2.15" /><path d="M6 12l-3 0" /><path d="M7.75 7.75l-2.15 -2.15" /></svg></span></div></div></div><div class="post-attribute"><div class="post-categories"><img src="/assets/images/svg/ta/ta-category.svg" class="icon noview" alt="Icon"><span><a class="post-categories-link" href="/categories/Java/">Java</a></span></div><div class="post-tags"><img src="/assets/images/svg/ta/ta-tag.svg" class="icon noview" alt="Icon"><span></span></div></div></div><div class="post markdown" indent="false"><p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/XZGlpWmeO7T8ft2.png"  alt="image-20220916142151904"><figcaption>image-20220916142151904</figcaption></figure></p>
+<h1 id="新手入门篇"><a href="#新手入门篇" class="headerlink" title="新手入门篇"></a>新手入门篇</h1><p>**注意：**开始学习 JavaSE 之前建议学习的前置课程《C 语言程序设计》《数据结构》《操作系统》《计算机组成原理》</p>
+<p>欢迎各位小伙伴来到 JavaSE 视频教程，期待与各位小伙伴共度这一旅程！视频中所有的文档、资料，都可以直接在视频下方简介中找到，视频非培训机构出品，纯个人录制，不需要加任何公众号、小程序，直接自取即可。</p>
+<p>教程开始之前，提醒各位小伙伴：</p>
+<ul>
+<li>如果你对某样东西不熟悉，请务必保证跟视频中使用一模一样的环境、一模一样的操作方式去使用，不要自作主张，否则出现某些奇怪的问题又不知道怎么办，就会浪费很多时间。</li>
+<li>视频依然是基于 Java 8 进行讲解，不要自己去安装一个其他的版本，想要了解新版本特性可以在另一个视频里面观看。</li>
+<li>在学习过程中，尽可能避免出现中文文件夹，包括后面的环境安装、项目创建，都尽量不要放在中文路径下（因为使用中文常常出现奇奇怪怪的问题）建议使用对应的英文单词代替，或者是用拼音都可以，最好只出现英文字母和数字。</li>
+<li>本系列教程使用 IDEA 社区版（免费）即可，不需要申请终极版。</li>
+</ul>
+<p>如果觉得本视频对你有帮助，请一键三连支持一下 UP 主！</p>
+<h2 id="计算机思维导论"><a href="#计算机思维导论" class="headerlink" title="计算机思维导论"></a>计算机思维导论</h2><p>计算机自 1946 年问世以来，几乎改变了整个世界。</p>
+<p>现在我们可以通过电脑来做很多事情，比如我们常常听到的什么人工智能、电子竞技、大数据等等，都和计算机息息相关，包括我们现在的手机、平板等智能设备，也是计算机转变而来的。</p>
+<p>也许你没有接触过计算机，也许你唯一接触计算机就是用来打游戏，也有可能你曾经捣鼓过计算机，在学习 Java 之前，先让我们来了解一下计算机的世界。</p>
+<h3 id="计算机的世界"><a href="#计算机的世界" class="headerlink" title="计算机的世界"></a>计算机的世界</h3><p>**注意：**如果你已经完成了《C 语言程序设计》视频教程的学习，可以直接跳过此部分。</p>
+<p>计算机虽然名字听着很高级，不过它也是由一个个简单电路组成的。</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://tva1.sinaimg.cn/large/e6c9d24ely1h2rd1x1rtgj21dy0cw74r.jpg"  alt="img"><figcaption>img</figcaption></figure></p>
+<p>这是我们在初中就学习过的电路图，不过这种电路太过简单，只能完成一些很基础的的操作，比如点亮小灯泡等。</p>
+<p>很明显想要实现计算机怎么高级的运算机器，肯定是做不到的，这时我们就需要引入更加强大的数字电路了。</p>
+<blockquote>
+<p>用数字信号完成对数字量进行<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%AE%97%E6%9C%AF%E8%BF%90%E7%AE%97/3118202">算术运算</a>和<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97/7224729">逻辑运算</a>的电路称为数字电路，或数字系统。由于它具有逻辑运算和逻辑处理功能，所以又称数字逻辑电路。现代的数字电路由半导体工艺制成的若干数字集成器件构造而成。逻辑门是数字逻辑电路的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%9F%BA%E6%9C%AC%E5%8D%95%E5%85%83/5246264">基本单元</a>。</p>
+</blockquote>
+<p>计算机专业一般会在大一开放《数字电路》这门课程，会对计算机底层的数字电路实现原理进行详细介绍。</p>
+<p>数字电路引入了逻辑判断，我们来看看简单的数字电路：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://tva1.sinaimg.cn/large/e6c9d24ely1h2rdj1916aj21iq0dygm4.jpg"  alt="img"><figcaption>img</figcaption></figure></p>
+<p>数字电路中，用电压的高低来区分出两种信号，低电压表示 0，高电压表示 1，由于只能通过这种方式表示出两种类型的信号，所以计算机采用的是二进制。</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E4%BA%8C%E8%BF%9B%E5%88%B6/361457">二进制</a>是计算技术中广泛采用的一种<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%95%B0%E5%88%B6/217113">数制</a>。二进制数据是用 0 和 1 两个数码来表示的数。它的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%9F%BA%E6%95%B0/4260">基数</a>为 2，进位规则是“逢二进一”，借位规则是“借一当二”。</p>
+<p>比如我们一般采用的都是十进制表示，比如 9 再继续加 1 的话，就需要进位了，变成 10，在二进制中，因为只有 0 和 1，所以当 1 继续加 1 时，就需要进位了，就变成 10 了（注意这不是十，读成一零就行了）</p>
+</blockquote>
+<p>当然，仅仅有两种信号还不够，我们还需要逻辑门来辅助我们完成更多的计算，最基本的逻辑关系是与、或、非，而逻辑门就有相应的是<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E4%B8%8E%E9%97%A8">与门</a>、<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%88%96%E9%97%A8">或门</a>和<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E9%9D%9E%E9%97%A8">非门</a>，可以用电阻、电容、二极管、三极管等分立原件构成（具体咋构成的咱这里就不说了）</p>
+<p>比如与操作，因为只有两种类型，我们一般将 1 表示为真，0 表示为假，与操作（用&amp;表示）要求两个数参与进来，比如：</p>
+<ul>
+<li><p>1 &amp; 1 &#x3D; 1 必须两边都是真，结果才为真。</p>
+</li>
+<li><p>1 &amp; 0 &#x3D; 0 两边任意一个或者都不是真，结果为假。</p>
+</li>
+</ul>
+<p>或运算（用 | 表示）：</p>
+<ul>
+<li><p>1 | 0 &#x3D; 1 两边只要有一个为真，结果就为真</p>
+</li>
+<li><p>0 | 0 &#x3D; 0 两边同时为假，结果才是假</p>
+</li>
+</ul>
+<p>非运算实际上就是取反操作（可以是 ! 表示）</p>
+<ul>
+<li><p>!1 &#x3D; 0</p>
+</li>
+<li><p>!0 &#x3D; 1 非运算会将真变成假，假变成真</p>
+</li>
+</ul>
+<p>有了这些运算之后，我们的电路不仅仅可以实现计算，也可以实现各种各样的逻辑判断，最终才能发展成我们的计算机。</p>
+<p>前面我们大概介绍一下计算机的底层操作原理，接着我们来看看计算机的基本组成。</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://tva1.sinaimg.cn/large/e6c9d24ely1h2reca0cgoj20x60b40uu.jpg"  alt="img"><figcaption>img</figcaption></figure></p>
+<p>相信各位熟知的计算机都是一个屏幕+一个主机的形式，然后配上我们的键盘鼠标，就可以开始使用了，但是实际上标准的计算机结构并没有这么简单，我们来看看：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://tva1.sinaimg.cn/large/e6c9d24ely1h2reersjdmj21k20fqdhl.jpg"  alt="img"><figcaption>img</figcaption></figure></p>
+<p>我们电脑最核心的部件，当属 CPU，因为几乎所有的运算都是依靠 CPU 进行（各种各样的计算电路已经在 CPU 中安排好了，我们只需要发送对应的指令就可以进行对应的运算），它就像我们人的大脑一样，有了大脑才能进行思考。不过光有大脑还不行，还要有一些其他的部分来辅助工作，比如我们想向电脑里面打字，那么就需要连接一个键盘才能输入，我们想要点击桌面上的图标，那么就需要一个鼠标来操作光标，这些都是输入设备。我们的电脑开机之后显示器上会显示出画面，实际上显示器就是输出设备。</p>
+<p>当然除了这些内容之外，我们的电脑还需要内存来保存运行时的一些数据，以及外存来保存文件（比如硬盘）等。我们常说的 iPhone14 512G，这个 512G 并不是指的内存，而是指的外存，准确的说是用于存放文件硬盘大小，而真正的内存是我们常说的 4G&#x2F;6G&#x2F;8G 运行内存，内存的速度远高于外存的速度，所以 1G 内存的价格远超 1G 硬盘的价格。</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://tva1.sinaimg.cn/large/e6c9d24ely1h2riw9u06uj21bs0b4jso.jpg"  alt="img"><figcaption>img</figcaption></figure></p>
+<p>计算机包括五大部件：运算器、控制器、存储器、输入和输出设备。有了这一套完整的硬件环境，我们的电脑才算是有了一个完整的身体。</p>
+<h3 id="操作系统概述"><a href="#操作系统概述" class="headerlink" title="操作系统概述"></a>操作系统概述</h3><p>**注意：**如果你已经完成了《C 语言程序设计》视频教程的学习，可以直接跳过此部分。</p>
+<p>前面我们了解了一下计算机的大致原理和组成结构，但是光有这一套硬件可不行，如何让这一套硬件按照我们想要的方式运作起来，也是非常重要的，这时我们就需要介绍操作系统了。</p>
+<blockquote>
+<p>操作系统（operating system，简称 OS）是管理<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A1%AC%E4%BB%B6/5459592">计算机硬件</a>与<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%BD%AF%E4%BB%B6/12053">软件</a>资源的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A8%8B%E5%BA%8F/3220205">计算机程序</a>。操作系统需要处理如管理与<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E9%85%8D%E7%BD%AE/2394679">配置</a><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%86%85%E5%AD%98/103614">内存</a>、决定<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E7%B3%BB%E7%BB%9F%E8%B5%84%E6%BA%90/974435">系统资源</a>供需的优先次序、控制<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%BE%93%E5%85%A5%E8%AE%BE%E5%A4%87/10823368">输入设备</a>与<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%BE%93%E5%87%BA%E8%AE%BE%E5%A4%87/10823333">输出设备</a>、操作网络与管理<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F/4827215">文件系统</a>等基本事务。操作系统也提供一个让用户与系统<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E4%BA%A4%E4%BA%92/6964417">交互</a>操作的界面。</p>
+<p>一般在计算机专业大二，会开放《操作系统》课程，会详细讲解操作系统的底层运作机制和调度。</p>
+</blockquote>
+<p>一般我们电脑上都安装了 Windows 操作系统（苹果笔记本安装的是 MacOS 操作系统），现在主流的电脑都已经预装 Windows11 了：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://tva1.sinaimg.cn/large/e6c9d24ely1h2rjnis7lkj21ew0e041a.jpg"  alt="img"><figcaption>img</figcaption></figure></p>
+<p>有了操作系统，我们的电脑才能真正运行起来，我们就可以轻松地通过键盘和鼠标来操作电脑了。</p>
+<p>不过操作系统最开始并不是图形化界面，它类似于 Windows 中的命令提示符：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://tva1.sinaimg.cn/large/e6c9d24ely1h2rkezow9dj21v60ew40f.jpg"  alt="img"><figcaption>img</figcaption></figure></p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://tva1.sinaimg.cn/large/e6c9d24ely1h2rkjitqqnj21kc08475e.jpg"  alt="img"><figcaption>img</figcaption></figure></p>
+<p>没有什么图标这些概念，只有一个简简单单的黑框让我们进行操作，通过输入命令来进行一些简单的使用，程序的运行结果也会在黑框框（命令行）中打印出来，不过虽然仅仅是一个黑框，但是能运行的程序可是非常非常多的，只需要运行我们编写好的程序，就能完成各种各样复杂的计算任务，并且计算机的计算速度远超我们的人脑。</p>
+<blockquote>
+<p>中国超级计算机系统天河二号，计算速度达到每秒 5.49 亿亿次。</p>
+</blockquote>
+<p>当然，除了我们常见的 Windows 和 MacOS 系统之外，还有我们以后需要经常打交道的 Linux 操作系统，这种操作系统是开源的，意思是所有的人都可以拿到源代码进行修改，于是就出现了很多发行版：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://tva1.sinaimg.cn/large/e6c9d24ely1h2rkm3bo7sj21gk0b4dh3.jpg"  alt="img"><figcaption>img</figcaption></figure></p>
+<p>这些发行版有带图形化界面的，也有不带图形化界面的，不带图形化界面的 Linux 将是我们以后学习的重点。</p>
+<p>不同操作系统之间的软件并不是通用的，比如 Windows 下我们的软件一般是.exe 后缀名称，而 MacOS 下则不是，并且也无法直接运行.exe 文件，这是因为不同操作系统的具体实现会存在一些不同，程序编译（我们之后会介绍到）之后的格式也会不同，所以是无法做到软件通用的。</p>
+<p>正是因为有了操作系统，才能够组织我们计算机的底层硬件（包括 CPU、内存、输入输出设备等）进行有序工作，没有操作系统电脑就如同一堆废铁，只有躯壳没有灵魂。</p>
+<h3 id="计算机编程语言"><a href="#计算机编程语言" class="headerlink" title="计算机编程语言"></a>计算机编程语言</h3><p>**注意：**如果你已经完成了《C 语言程序设计》视频教程的学习，可以直接跳过此部分。</p>
+<p>现在我们大致了解了我们的电脑的运作原理，实际上是一套完整的硬件+一个成形的操作系统共同存在的。接着我们就可以开始了解一下计算机的编程语言了。我们前面介绍的操作系统也是由编程语言写出来的，操作系统本身也算是一个软件。</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://tva1.sinaimg.cn/large/e6c9d24ely1h2rl228014j21eq0a2gnf.jpg"  alt="img"><figcaption>img</figcaption></figure></p>
+<p>那么操作系统是如何让底层硬件进行工作的呢？实际上就是通过向 CPU 发送指令来完成的。</p>
+<blockquote>
+<p>计算机指令就是指挥机器工作的指示和命令，程序就是一系列按一定顺序排列的指令，执行程序的过程就是计算机的工作过程。指令集，就是 CPU 中用来计算和控制计算机系统的一套指令的集合，而每一种新型的 CPU 在设计时就规定了一系列与其他硬件电路相配合的指令系统。而指令集的先进与否，也关系到 CPU 的性能发挥，它也是 CPU 性能体现的一个重要标志。</p>
+</blockquote>
+<p>我们电脑中的 CPU 有多种多样的，不同的 CPU 之间可能也会存在不同的架构，比如现在最常用的是 x86 架构，还有我们手机平板这样的移动设备使用的 arm 架构，不同的架构指令集也会有不同。</p>
+<p>我们知道，计算机底层硬件都是采用的 0 和 1 这样的二进制表示，所以指令也是一样的，比如（这里随便写的）：</p>
+<ul>
+<li><p>000001 - 代表开机</p>
+</li>
+<li><p>000010 - 代表关机</p>
+</li>
+<li><p>000011 - 代表进行加法运算</p>
+</li>
+</ul>
+<p>当我们通过电路发送给 CPU 这样的二进制指令，CPU 就能够根据我们的指令执行对应的任务，而我们编写的程序保存在硬盘中也是这样的二进制形式，我们只需要将这些指令组织好，按照我们的思路一条一条执行对应的命令，就能够让计算机计算任何我们需要的内容了，这其实就是机器语言。</p>
+<p>不过随着时代的进步，指令集越来越大，CPU 支持的运算类型也越来越多，这样的纯二进制编写实在是太累了，并且越来越多的命令我们根本记不住，于是就有了汇编语言。汇编语言将这些二进制的操作码通过助记符来替换：</p>
+<ul>
+<li><p>MOV 传送字或字节。</p>
+</li>
+<li><p>MOVSX 先符号扩展,再传送。</p>
+</li>
+<li><p>MOVZX 先零扩展,再传送。</p>
+</li>
+<li><p>PUSH 把字压入堆栈。</p>
+</li>
+</ul>
+<p>把这些原有的二进制命令通过一个单词来代替，这样是不是就好记多了，在程序编写完成后，我们只需要最后将这些单词转换回二进制指令就可以了，这也是早期出现的低级编程语言。</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://tva1.sinaimg.cn/large/e6c9d24ely1h2rlmjqp3dj217e09agmz.jpg"  alt="img"><figcaption>img</figcaption></figure></p>
+<p>不过虽然通过这些助记符就能够很轻松地记住命令，但是还是不够方便，因为可能我们的程序需要完成一个很庞大的任务，但是如果还是这样一条一条指令进行编写，是不是太慢了点，有时候可能做一个简单的计算，都需要好几条指令来完成。于是，高级编程语言——C 语言，终于诞生了。</p>
+<blockquote>
+<p>C 语言诞生于美国的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%B4%9D%E5%B0%94%E5%AE%9E%E9%AA%8C%E5%AE%A4/686816">贝尔实验室</a>，由<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E4%B8%B9%E5%B0%BC%E6%96%AF%C2%B7%E9%87%8C%E5%A5%87/7267171">丹尼斯·里奇</a>（Dennis MacAlistair Ritchie）以肯尼斯·蓝·汤普森（Kenneth Lane Thompson）设计的<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/B%E8%AF%AD%E8%A8%80/1845842">B 语言</a>为基础发展而来，在它的主体设计完成后，汤普森和里奇用它完全重写了 UNIX 操作系统，且随着 UNIX 操作系统的发展，C 语言也得到了不断的完善。</p>
+</blockquote>
+<p>高级语言不同于低级语言，低级语言的主要操作对象是指令本身，而高级语言却更加符合我们人脑的认知，更像是通过我们人的思维，去告诉计算机你需要做什么，包括语法也会更加的简单易懂。下面是一段简单的 C 语言代码：</p>
+<div class="code-container" code-lang="C"><div class="codebox"><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">  	<span class="type">int</span> a = <span class="number">10</span>;   <span class="comment">//定义一个a等于10</span></span><br><span class="line">  	<span class="type">int</span> b = <span class="number">10</span>;   <span class="comment">//定义一个b等于10</span></span><br><span class="line">  	<span class="type">int</span> c = a + b;   <span class="comment">//语义非常明确，c就是a加上b计算出来的结果。</span></span><br><span class="line">  	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><div class="code-fold" title="Fold/Open"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg></div><div class="code-copy" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></div></div></div>
+
+<p>不过现在看不懂没关系，我们后面慢慢学。</p>
+<p>C 语言虽然支持按照我们更容易理解的方式去进行编程，但是最后还是会编译成汇编指令最后变成计算机可以直接执行的指令，不过具体的编译过程，我们不需要再关心了，我们只需要去写就可以了，而对我们代码进行编译的东西，称为编译器。</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://tva1.sinaimg.cn/large/e6c9d24egy1h2uzn81nwsj21qk07mdhd.jpg"  alt="img"><figcaption>img</figcaption></figure></p>
+<p>当然，除了 C 语言之外，还有很多其他的高级语言，比如 Java、Python、C#、PHP 等等，相比其他编程语言，C 算是比较古老的一种了，但是时隔多年直至今日，其他编程语言也依然无法撼动它的王者地位：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://tva1.sinaimg.cn/large/e6c9d24ely1h2rlw7fvhmj20xo0b0wf4.jpg"  alt="img"><figcaption>img</figcaption></figure></p>
+<p>可以看到在 2021 年 9 月，依然排在编程语言排行榜的<strong>第一名</strong>（Python 和 Java 紧随其后），可见这门语言是多么的不可撼动，很多操作系统、高级编程语言底层实现，几乎都是依靠 C 语言去编写的（包括 Java 的底层也是 C&#x2F;C++实现的）所以学习这一门语言，对于理工科尤其是计算机专业极为重要，学好 C 语言你甚至可以融汇贯通到其他语言，学起来也会轻松很多。</p>
+<h3 id="走进-Java-语言"><a href="#走进-Java-语言" class="headerlink" title="走进 Java 语言"></a>走进 Java 语言</h3><p>前面我们介绍了 C 语言，它实际上就是通过编译，将我们可以看懂的代码，翻译为计算机能够直接执行的指令，这样计算机就可以按照我们想要的方式去进行计算了。当然，除了 C 语言之外，也有其他的语言，比如近几年也很火的 Python，它跟 C 语言不同，它并不会先进行编译，而是直接交给解释器解释执行：</p>
+<div class="code-container" code-lang="Python"><div class="codebox"><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Hello World!&quot;</span>)</span><br></pre></td></tr></table></figure><div class="code-fold" title="Fold/Open"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg></div><div class="code-copy" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></div></div></div>
+
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/xAe9TspMDtlz8SE.png"  alt="image-20220916150119407"><figcaption>image-20220916150119407</figcaption></figure></p>
+<p>可见，这种方式也可以让计算机按照我们的想法去进行工作。</p>
+<p>一般来说，编程语言就分为两大类：</p>
+<ul>
+<li>**编译型语言：**需要先编译为计算机可以直接执行的命令才可以运行。优点是计算机直接运行，性能高；缺点是与平台密切相关，在一种操作系统上编译的程序，无法在其他非同类操作系统上运行，比如 Windows 下的 exe 程序在 Mac 上就无法运行。</li>
+<li>**解释型语言：**只需要通过解释器代为执行即可，不需要进行编译。优点是可以跨平台，因为解释是解释器的事情，只需要在各个平台上安装对应的解释器，代码不需要任何修改就可以直接运行；缺点是需要依靠解释器解释执行，效率肯定没直接编译成机器指令运行的快，并且会产生额外的资源占用。</li>
+</ul>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/phfUjyuXLIbR3gJ.png"  alt="image-20220916151925672"><figcaption>image-20220916151925672</figcaption></figure></p>
+<p>那么我们来看看我们今天要介绍的主角，Java 语言（Java 之父：James Gosling，詹姆斯·高斯林）</p>
+<blockquote>
+<p>Write Once, Run Anywhere.</p>
+</blockquote>
+<p>这是 Java 语言的标语，它的目标很明确：一次编写，到处运行，它旨在打破平台的限制，让 Java 语言可以运行在任何平台上，并且不需要重新编译，实现跨平台运行。</p>
+<p>Java 自 1995 年正式推出以来，已经度过了快 28 个春秋，而基于 Java 语言，我们的生活中也有了各种各样的应用：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/8SWeCjp6M4ufBk2.png"  alt="image-20220916151604563"><figcaption>image-20220916151604563</figcaption></figure></p>
+<ul>
+<li>诺基亚手机上的很多游戏都是使用 Java 编写的。</li>
+<li>安卓系统中的各种应用程序也是使用 Java 编写的。</li>
+<li>著名沙盒游戏《Minecraft》也有对应的 Java 版本，得益于 Java 跨平台特性，无论在什么操作系统上都可以玩到这款游戏。</li>
+<li>…</li>
+</ul>
+<p>（有关 Java 的详细发展历程，可以参考《Java 核心技术·卷 I》第一章）</p>
+<p>可见，Java 实际上早已在我们生活中的各个地方扎根。那么，Java 语言是什么样的一个运行机制呢？</p>
+<p>实际上我们的 Java 程序也是需要进行编译才可以运行的，这一点与 C 语言是一样的，Java 程序编译之后会变成<code>.class</code>结尾的二进制文件：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/5z2OWQb3B9AhwSZ.png"  alt="image-20220916153102763"><figcaption>image-20220916153102763</figcaption></figure></p>
+<p>不过不同的是，这种二进制文件计算机并不能直接运行，而是需要交给 JVM（Java 虚拟机）执行。</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/6HnkcSIfPdVZEpM.png"  alt="image-20220916152514450"><figcaption>image-20220916152514450</figcaption></figure></p>
+<p>JVM 是个什么东西呢？简单来说，它就像我们前面介绍的解释器一样，我们可以将编译完成的<code>.class</code>文件直接交给 JVM 去运行，而程序中要做的事情，也都是由它来告诉计算机该如何去执行。</p>
+<p>在不同的操作系统下，都有着对应的 JVM 实现，我们只需要安装好就可以了，而我们程序员只需要将 Java 程序编译为<code>.class</code>文件就可以直接交给 JVM 运行，无论是什么操作系统，JVM 都采用的同一套标准读取和执行<code>.class</code>文件，所以说我们编译之后，在任何平台都可以运行，实现跨平台。</p>
+<p>由于 Java 又需要编译同时还需要依靠 JVM 解释执行，所以说 Java<strong>既是编译型语言，也是解释型语言。</strong></p>
+<p>Java 分为很多个版本：</p>
+<ul>
+<li>**JavaSE：**是我们本教程的主要学习目标，它是标准版的 Java，也是整个 Java 的最核心内容，在开始后续课程之前，这是我们不得不越过的一道坎，这个阶段一定要认真扎实地将 Java 学好，不然到了后面的高级部分，会很头疼。</li>
+<li>**JavaME：**微缩版 Java，已经基本没人用了。</li>
+<li>**JavaEE：**企业级 Java，比如网站开发，它是 JavaSE 阶段之后的主要学习方向。</li>
+</ul>
+<p>从下节课开始，我们就正式地进行 Java 环境的安装和 IDE 的使用学习。</p>
+<hr>
+<h2 id="环境安装与-IDE-使用"><a href="#环境安装与-IDE-使用" class="headerlink" title="环境安装与 IDE 使用"></a>环境安装与 IDE 使用</h2><p>前面我们介绍了 Java 语言，以及其本身的一些性质，这一部分我们就开始进行学习环境安装（这一部分请务必跟着操作，不要自作主张地去操作，一开始就出问题其实是最劝退新手的）</p>
+<h3 id="JDK-下载与安装"><a href="#JDK-下载与安装" class="headerlink" title="JDK 下载与安装"></a>JDK 下载与安装</h3><p>首先我们来介绍一下 JDK 和 JRE，各位小伙伴一定要能够区分这两者才可以。</p>
+<ul>
+<li><strong>JRE（Java Runtime Environment）</strong>：Java 的运行环境，安装了运行环境之后，Java 程序才可以运行，一般不做开发，只是需要运行 Java 程序直接安装 JRE 即可。</li>
+<li><strong>JDK（Java Development Kit）</strong>：包含 JRE，并且还附带了大量开发者工具，我们学习 Java 程序开发就使用 JDK 即可。</li>
+</ul>
+<p>它们的关系如下：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/MpGWrh5xZdI3bCJ.png"  alt="image-20220916154906732"><figcaption>image-20220916154906732</figcaption></figure></p>
+<p>那么现在我们就去下载 JDK 吧，这里推荐安装免费的 ZuluJDK：<a target="_blank" rel="noopener" href="https://www.azul.com/downloads/?version=java-8-lts&package=jdk">https://www.azul.com/downloads/?version=java-8-lts&amp;package=jdk</a></p>
+<p>在这里选择自己的操作系统对应的安装包：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/thaGoKI8pXA7Vl6.png"  alt="image-20220916155142546"><figcaption>image-20220916155142546</figcaption></figure></p>
+<p>比如 Windows 下，我们就选择<code>.msi</code>的安装包即可（MacOS、Linux 下同样选择对应的即可）</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/vjc62OFaqmAegCh.png"  alt="image-20220916155242814"><figcaption>image-20220916155242814</figcaption></figure></p>
+<p>下载完成后，我们直接双击安装：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/Loi3Ru7FAWHP6vN.png"  alt="image-20220916160027645"><figcaption>image-20220916160027645</figcaption></figure></p>
+<p>**注意，这里不建议各位小伙伴去修改安装的位置！**新手只建议安装到默认位置（不要总担心 C 盘不够，该装的还是要装，尤其是这种环境，实在装不下就去将其他磁盘的空间分到 C 盘一部分）如果是因为没有安装到默认位置出现了任何问题，你要是找不到大佬问的话，又得重新来一遍，就很麻烦。</p>
+<p>剩下的我们只需要一路点击 Next 即可，安装完成之后，我们打开 CMD 命令窗口（MacOS 下直接打开“终端”）来验证一下（要打开 CMD 命令窗口，Windows11 可以直接在下面的搜索框搜索 cmd 即可，或者直接在文件资源管理器路径栏输入 cmd 也可以）</p>
+<p>我们直接输入 java 命令即可：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/ROD3vkzwT8yFqrc.png"  alt="image-20220916160756046"><figcaption>image-20220916160756046</figcaption></figure></p>
+<p>如果能够直接输出内容，说明环境已经安装成功了，正常情况下已经配置好了，我们不需要手动去配置什么环境变量，所以说安装好就别管了。</p>
+<p>输入<code>java -version</code>可以查看当前安装的 JDK 版本：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/cPpCTOf9zZsWSw8.png"  alt="image-20220916161050161"><figcaption>image-20220916161050161</figcaption></figure></p>
+<p>只要是 1.8.0 就没问题了，后面的小版本号可能你们会比我的还要新。</p>
+<p>这样我们就完成了 Java 环境的安装，我们可以来体验一下编写并且编译运行一个简单的 Java 程序，我们新建一个文本文档，命名为<code>Main.txt</code>（如果没有显示后缀名，需要在文件资源管理器中开启一下）然后用记事本打开，输入以下内容：</p>
+<div class="code-container" code-lang="Java"><div class="codebox"><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span>&#123;</span><br><span class="line">		<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line">				System.out.println(<span class="string">&quot;Hello World!&quot;</span>);</span><br><span class="line">		&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><div class="code-fold" title="Fold/Open"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 9l6 6l6 -6" /></svg></div><div class="code-copy" title="Copy"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"  stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" /><path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" /></svg></div></div></div>
+
+<p>现在看不懂没关系，直接用就行，我们后面会一点一点讲解的。</p>
+<p>编辑好之后，保存退出，接着我们将文件的后缀名称修改为<code>.java</code>这是 Java 源程序文件的后缀名称：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/MAPh4aLSwHuRNlU.png"  alt="image-20220916161607822"><figcaption>image-20220916161607822</figcaption></figure></p>
+<p>此时我们打开 CMD，注意要先进入到对应的路径下，比如我们现在的路径：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/8A4oq7XdeLthpmg.png"  alt="image-20220916161720722"><figcaption>image-20220916161720722</figcaption></figure></p>
+<p>我们使用<code>cd</code>命令先进入到这个目录下：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/HifR7pVSmqbP4Kh.png"  alt="image-20220916161802753"><figcaption>image-20220916161802753</figcaption></figure></p>
+<p>要编译一个 Java 程序，我们需要使用<code>javac</code>命令来进行：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/IPofZRshyuwgciU.png"  alt="image-20220916161857278"><figcaption>image-20220916161857278</figcaption></figure></p>
+<p>执行后，可以看到目录下多出来了一个<code>.class</code>文件：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/UdEJQL6WvIBFXf1.png"  alt="image-20220916161923814"><figcaption>image-20220916161923814</figcaption></figure></p>
+<p>这样我们就成功编译了一个 Java 程序，然后我们就可以将其交给 JVM 运行了，我们直接使用<code>java</code>命令即可：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/esLwPFcOj87MrWo.png"  alt="image-20220916162048405"><figcaption>image-20220916162048405</figcaption></figure></p>
+<p>注意不要加上后缀名称，直接输入文件名字即可，可以看到打印了一个 Hello World! 字样，我们的第一个 Java 程序就可以运行了。</p>
+<h3 id="IDEA-安装与使用"><a href="#IDEA-安装与使用" class="headerlink" title="IDEA 安装与使用"></a>IDEA 安装与使用</h3><p>前面我们介绍了 JDK 开发环境的安装以及成功编译运行了我们的第一个 Java 程序。</p>
+<p>但是我们发现，如果我们以后都使用记事本来进行 Java 程序开发的话，是不是效率太低了点？我们还要先编辑，然后要改后缀，还要敲命令来编译，有没有更加方便一点的写代码的工具呢？这里我们要介绍的是：<strong>IntelliJ IDEA</strong>（这里不推荐各位小伙伴使用 Eclipse，因为操作上没有 IDEA 这么友好）</p>
+<p>IDEA 准确来说是一个集成开发环境（IDE），它集成了大量的开发工具，编写代码的错误检测、代码提示、一键完成编译运行等，非常方便。</p>
+<p>下载地址：<a target="_blank" rel="noopener" href="https://www.jetbrains.com.cn/idea/">IntelliJ IDEA：JetBrains 功能强大、符合人体工程学的 Java IDE</a>（如果你之前学习 C 语言程序设计篇使用过 CLion，你会发现界面一模一样，这样就能方便你快速上手）</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/UfIQzAXBS7TePm9.png"  alt="image-20220916162544360"><figcaption>image-20220916162544360</figcaption></figure></p>
+<p>我们直接点击下载即可：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/sifjSGwLxYhHgKR.png"  alt="image-20220916162830260"><figcaption>image-20220916162830260</figcaption></figure></p>
+<p>这个软件本身是付费的，比较贵，而且最近还涨价了，不过这里我们直接下载面的社区版本就行了（JavaSE 学习阶段不需要终极版，但是建议有条件的还是申请一个，因为后面 JavaWeb 开始就需要终极版了，学生和教师可以直接免费申请一年的使用许可，并且每个学期都可以续一年）</p>
+<p>下载好之后，直接按照即可，这个不强制要求安装到 C 盘，自己随意，但是注意路径中不要出现中文！</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/jd64AxEfmQXWTNl.png"  alt="image-20220916163329410"><figcaption>image-20220916163329410</figcaption></figure></p>
+<p>这里勾选一下创建桌面快捷方式就行：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/buv9QmapGCENcXn.png"  alt="image-20220916163401880"><figcaption>image-20220916163401880</figcaption></figure></p>
+<p>安装完成后，我们直接打开就可以了：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/rihpxBbQz9jlZWU.png"  alt="image-20220916163726690"><figcaption>image-20220916163726690</figcaption></figure></p>
+<p>此时界面是全英文，如果各位小伙伴看得惯，可以直接使用全英文的界面（使用英文界面可以认识更多的专业术语词汇，但是可能看起来没中文那么直观，而且 IDEA 本身功能就比较多，英语不好的小伙伴就很头疼）这里还是建议英语不好的小伙伴使用中文界面，要使用中文只需要安装中文插件即可：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/tW4UPnpaFsfDB9r.png"  alt="image-20220916164025426"><figcaption>image-20220916164025426</figcaption></figure></p>
+<p>我们打开 Plugins 插件这一栏，然后直接在插件市场里面搜索 Chinese，可以找到一个中文语言包的插件，我们直接 Install 安装即可，安装完成后点击重启，现在就是中文页面了：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/UFka83Se97COoJK.png"  alt="image-20220916164235648"><figcaption>image-20220916164235648</figcaption></figure></p>
+<p>如果各位小伙伴不喜欢黑色主题，也可以修改为白色主题，只需要在自定义中进行修改即可，一共四种主题。</p>
+<p>如果你之前使用过其他 IDE 编写代码，这里还支持按键映射（采用其他 IDE 的快捷键方案）有需要的可以自己修改一下：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/3wbt7QhZmq9EKgY.png"  alt="image-20220916164415447"><figcaption>image-20220916164415447</figcaption></figure></p>
+<p>接下来，我们来看看如何使用 IDEA 编写 Java 程序，IDEA 是以项目的形式对一个 Java 程序进行管理的，所以说我们直接创建一个新的项目，点击新建项目：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/4qvjxmozBaJgOuH.png"  alt="image-20220916164906998"><figcaption>image-20220916164906998</figcaption></figure></p>
+<p>此时来到创建页面：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/ldzGSmYBkr7uO3c.png"  alt="image-20220916164941663"><figcaption>image-20220916164941663</figcaption></figure></p>
+<ul>
+<li>**名称：**你的 Java 项目的名称，随便起就行，尽量只带英文字母和数字，不要出现特殊字符和中文。</li>
+<li>**位置：**项目的存放位置，可以自己根据情况修改，同样的，路径中不要出现中文。</li>
+<li>**语言：**IDEA 支持编写其他语言的项目，但是这里我们直接选择 Java 就行了。</li>
+<li>**构建系统：**在 JavaSE 阶段一律选择 IntelliJ 就行了，Maven 我们会在 JavaWeb 之后进行讲解，Gradle 会在安卓开发教程中介绍。</li>
+<li>**JDK：**就是我们之前安装好的 JDK，如果是默认路径安装，这里会自动识别（所以说不要随便去改，不然这些地方就很麻烦）</li>
+</ul>
+<p>当然，如果 JDK 这里没有自动识别到，那么就手动添加一下：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/fDJKB6M3TlWizoQ.png"  alt="image-20220916165351016"><figcaption>image-20220916165351016</figcaption></figure></p>
+<p>没问题之后，我们直接创建项目：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/aQDnYVx6cZhlRUv.png"  alt="image-20220916165926205"><figcaption>image-20220916165926205</figcaption></figure></p>
+<p>进入之后，可以看到已经自动帮助我们创建好了一个<code>java</code>源文件，跟我们之前的例子是一样的。要编译运行我们的 Java 程序，只需要直接点击左边的三角形（启动按钮）即可：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/nyWCev6SNkH9oMm.png"  alt="image-20220916170119203"><figcaption>image-20220916170119203</figcaption></figure></p>
+<p>点击之后，会在下方自动开始构建：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/3791Nedvu8RQxSc.png"  alt="image-20220916170201943"><figcaption>image-20220916170201943</figcaption></figure></p>
+<p>完成之后，就可以在控制台看到输出的内容了：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/l8G5MwfLJHq3eQD.png"  alt="image-20220916170231090"><figcaption>image-20220916170231090</figcaption></figure></p>
+<p>我们可以看到新增加了一个<code>out</code>目录，这里面就是刚刚编译好的<code>.class</code>文件：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/49ywZ8bEQtYdLBP.png"  alt="image-20220916170358904"><figcaption>image-20220916170358904</figcaption></figure></p>
+<p>IDEA 非常强大，即使是编译之后的二进制文件，也可以反编译回原代码的样子：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/DeaO9P8mLRA2uHb.png"  alt="image-20220916170442922"><figcaption>image-20220916170442922</figcaption></figure></p>
+<p>如果我们想写一个新的 Java 项目，可以退出当前项目重新创建：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/sIw3ZcarNuA4TS8.png"  alt="image-20220916170558720"><figcaption>image-20220916170558720</figcaption></figure></p>
+<p>此时项目列表中就有我们刚刚创建的 Java 项目了：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/urQkEzWw5JOAGLo.png"  alt="image-20220916170654353"><figcaption>image-20220916170654353</figcaption></figure></p>
+<p>如果你还想探索 IDEA 的其他功能，可以点击欢迎页最下方的学习：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/MdGZgaBPyqfeIxX.png"  alt="image-20220916164837599"><figcaption>image-20220916164837599</figcaption></figure></p>
+<p>会有一个专门的引导教程项目，来教你如何使用各项功能：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/I1PcHasEzyxw8eL.png"  alt="image-20220916164703111"><figcaption>image-20220916164703111</figcaption></figure></p>
+<h3 id="IDEA-新-UI-介绍和外观设置"><a href="#IDEA-新-UI-介绍和外观设置" class="headerlink" title="IDEA 新 UI 介绍和外观设置"></a>IDEA 新 UI 介绍和外观设置</h3><p>IDEA 在 2022 年开启了界面新 UI 的测试，并将在年底前实装，所以说我们将老 UI 界面改为新的 UI 界面进行介绍（如果已经是新 UI 的样式，那么就不需要像下面一样开启了）</p>
+<p>我们随便进入一个项目，然后双击 Shift 出现搜索框（这个搜索框很好用，什么都能搜）输入<code>registry</code></p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/gXNG9fqzHJiWtlU.png"  alt="image-20220916171015360"><figcaption>image-20220916171015360</figcaption></figure></p>
+<p>找到<code>ide.experimental.ui</code>，将其勾选上，然后重启 IDEA 就变成新的 UI 样式了（你不说这是 IDEA 我还以为是 VS 呢）</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/4urncqfwQFG3pCT.png"  alt="image-20220916171139281"><figcaption>image-20220916171139281</figcaption></figure></p>
+<p>这里介绍一下新 UI 的各个功能，首先是运行项目，依然是点击左侧三角形：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/MwEkSagiTDZIL3y.png"  alt="image-20220916171251054"><figcaption>image-20220916171251054</figcaption></figure></p>
+<p>在第一次运行后，会自动生成一个运行配置，我们也可以直接点击右上角的运行：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/gtVmywzIBP5io1X.png"  alt="image-20220916171324195"><figcaption>image-20220916171324195</figcaption></figure></p>
+<p>效果是一样的，都可以编译运行 Java 项目。上面一排工具栏被丢到了一个菜单里面：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/UvednOgYZ3MEhBH.png"  alt="image-20220916171421975"><figcaption>image-20220916171421975</figcaption></figure></p>
+<p>如果各位小伙伴觉得代码字体太小了，可以在设置中进行调整：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/3zbAx94vJ5NihtY.png"  alt="image-20220916171604891"><figcaption>image-20220916171604891</figcaption></figure></p>
+<p>IDEA 的所有通知都可以在通知中查看：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/18aOSWXMhZnwPeq.png"  alt="image-20220916171736462"><figcaption>image-20220916171736462</figcaption></figure></p>
+<p>我们来看右下角，第一个三角形图标是运行的结果：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/4IdVS8mrxnezkqE.png"  alt="image-20220916171806992"><figcaption>image-20220916171806992</figcaption></figure></p>
+<p>第二栏是终端（其实就是内嵌的一个 CMD 命令窗口）可以自由敲命令，默认是位于项目根目录下：</p>
+<p><figure class="img-caption"><img   lazyload src="/assets/images/loading.gif" data-lazy-src="https://s2.loli.net/2022/09/16/CN9YwJ4LyxWGOIE.png"  alt="image-20220916171854171"><figcaption>image-20220916171854171</figcaption></figure></p>
+<p>至此，学习前准备就完成了，从下节课开始，我们将正式进入到 Java 语言的学习中。</p>
+</div><div class="post-copyright"><div class="post-copyright-info">本作品由 Flacce 于 2022-10-20 14:01:01 发布</div><div class="post-copyright-link"><span>作品地址：<a href="https://www.cvv.asia/posts/4bb08cb7.html">Java SE笔记（一）</a></span><button class="copy-text" type="button" data-text="https://www.cvv.asia/posts/4bb08cb7.html">复制</button></div><div class="post-copyright-detail">除特别声明外，本站作品均采用 <a href='https://creativecommons.org/licenses/by-nc-sa/4.0/' title='Attribution-NonCommercial-ShareAlike' target='_blank'>CC BY-NC-SA 4.0</a> 许可协议，转载请注明来自 <a href='/'>Flacce</a></div><img class="post-copyright-icon noview" src="https://f.whhhh.eu.org/favicon.png" alt="Logo"/></div><div class="post-tail-tags"></div></div><aside id="post-sidebar" status="show"><div id="toc-container"><div class="toc-title"><img src="/assets/images/svg/ta/ta-toc.svg" class="icon noview" alt="Icon"><span>目录</span></div><div class="toc-content" id="toc-div"><ol class="toc-list"><li class="toc-list-item toc-list-level-1"><a class="toc-list-link" href="#%E6%96%B0%E6%89%8B%E5%85%A5%E9%97%A8%E7%AF%87"><span class="toc-list-text">新手入门篇</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%80%9D%E7%BB%B4%E5%AF%BC%E8%AE%BA"><span class="toc-list-text">计算机思维导论</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%9A%84%E4%B8%96%E7%95%8C"><span class="toc-list-text">计算机的世界</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0"><span class="toc-list-text">操作系统概述</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BC%96%E7%A8%8B%E8%AF%AD%E8%A8%80"><span class="toc-list-text">计算机编程语言</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#%E8%B5%B0%E8%BF%9B-Java-%E8%AF%AD%E8%A8%80"><span class="toc-list-text">走进 Java 语言</span></a></li></ol></li><li class="toc-list-item toc-list-level-2"><a class="toc-list-link" href="#%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%E4%B8%8E-IDE-%E4%BD%BF%E7%94%A8"><span class="toc-list-text">环境安装与 IDE 使用</span></a><ol class="toc-list-child"><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#JDK-%E4%B8%8B%E8%BD%BD%E4%B8%8E%E5%AE%89%E8%A3%85"><span class="toc-list-text">JDK 下载与安装</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#IDEA-%E5%AE%89%E8%A3%85%E4%B8%8E%E4%BD%BF%E7%94%A8"><span class="toc-list-text">IDEA 安装与使用</span></a></li><li class="toc-list-item toc-list-level-3"><a class="toc-list-link" href="#IDEA-%E6%96%B0-UI-%E4%BB%8B%E7%BB%8D%E5%92%8C%E5%A4%96%E8%A7%82%E8%AE%BE%E7%BD%AE"><span class="toc-list-text">IDEA 新 UI 介绍和外观设置</span></a></li></ol></li></ol></li></ol></div></div></aside></div></div><div id="toolbar" hide=""><div id="toolbar-setting-container" hide=""><div class="toolbar-item"><button id="tool-color-mode" title="深色模式" type="button"><img src="/assets/images/svg/ta/ta-sun.svg" class="icon noview" alt="Icon"></button></div><div class="toolbar-item"><button class="copy-text" id="tool-share" title="分享" type="button" data-text="https://www.cvv.asia/posts/4bb08cb7.html"><img src="/assets/images/svg/ta/ta-share.svg" class="icon noview" alt="Icon"></button></div><div class="toolbar-item"><button id="tool-font-size-plus" title="放大字体" type="button"><img src="/assets/images/svg/ta/ta-text-plus.svg" class="icon noview" alt="Icon"></button></div><div class="toolbar-item"><button id="tool-font-size-minus" title="缩小字体" type="button"><img src="/assets/images/svg/ta/ta-text-minus.svg" class="icon noview" alt="Icon"></button></div></div><div class="toolbar-container"><div class="toolbar-item"><button id="tool-setting" title="设置" type="button"><img src="/assets/images/svg/ta/ta-setting.svg" class="icon noview" alt="Icon"></button></div><div class="toolbar-item"><button id="tool-toc" title="目录" type="button"><img src="/assets/images/svg/ta/ta-toc.svg" class="icon noview" alt="Icon"></button></div><div class="toolbar-item"><button id="tool-gototop" title="返回顶部" type="button"><img src="/assets/images/svg/ta/ta-up.svg" class="icon noview" alt="Icon"></button></div></div></div></main><footer><div class="footer"><div id="footer-copyright">© 2019 - 2025 <span class="heartbeat">💗</span> <a target="_blank" rel="noopener" href="https://www.flacce.eu.org/">Flacce</a></div><div id="footer-info"><div id="footer-framework">💕用心构建于 <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/chanwj/hexo-theme-meow" title=3.0.2 target="_blank">Meow</a></div><div id="footer-runtime"><span id="runtime" data-startdate="2019-12-12T22:16:20.000Z">🌻陪伴你已经</span></div></div><div id="footer-statistic"><span><span class="writing">✍️</span>已记录11个故事，共123.4k字的回忆</span><span id="beian-container"></span><script type="text/javascript">if (window.location.hostname === 'www.cvv.asia') {
+  document.addEventListener('DOMContentLoaded', function() {
+    var container = document.getElementById('beian-container');
+    if (container) {
+      container.innerHTML = '<span>｜</span> <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备2025158906号</a>';
+    }
+    // 确保完全覆盖默认背景图片
+    var style = document.createElement('style');
+    style.innerHTML = `
+      :root { --banner-background: url("https://t.alcy.cc/ycy") !important; }
+      body[data-mode="dark"] { --banner-background: url("https://t.alcy.cc/ycy") !important; }
+      body[data-mode="light"] { --banner-background: url("https://t.alcy.cc/ycy") !important; }
+      #home-banner, .banner, [class*="banner"] {
+        background-image: url("https://t.alcy.cc/ycy") !important;
+        background: url("https://t.alcy.cc/ycy") center top / cover no-repeat !important;
+      }
+    `;
+    document.head.appendChild(style);
+  });
+}
+</script></div><div id="footer-pageview"><div id="container_site_pv"><span>🔥总访问量</span><span id="vercount_value_site_pv"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 6l0 -3" /><path d="M16.25 7.75l2.15 -2.15" /><path d="M18 12l3 0" /><path d="M16.25 16.25l2.15 2.15" /><path d="M12 18l0 3" /><path d="M7.75 16.25l-2.15 2.15" /><path d="M6 12l-3 0" /><path d="M7.75 7.75l-2.15 -2.15" /></svg></span></div><div id="container_site_uv"><span>🐈访客人数</span><span id="vercount_value_site_uv"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 6l0 -3" /><path d="M16.25 7.75l2.15 -2.15" /><path d="M18 12l3 0" /><path d="M16.25 16.25l2.15 2.15" /><path d="M12 18l0 3" /><path d="M7.75 16.25l-2.15 2.15" /><path d="M6 12l-3 0" /><path d="M7.75 7.75l-2.15 -2.15" /></svg></span></div></div></div></footer><div class="scripts"><script>const GLOBALCONFIG = {
+  root: '/',
+  toolbar: true,
+  lazyload_src: '/assets/images/loading.gif',
+  friends: false,
+  codeblock: true,
+  share_text: '',
+  onblur_title: '请回来～✧(´▽`ʃ♡ƪ)',
+  mouse_click: true,
+  notify:{
+    enable: false,
+    info: '复制成功～转载请标注本文地址',
+    f12_info: '开发者模式已打开，请遵循本站版权协议'
+  },
+  search: {
+    enable: false,
+    path: 'search.xml',
+    local: {
+      top_n_per_article: 1,
+      preload: false
+    }
+  },
+  encrypt: false,
+};
+</script><script>if (!localStorage.getItem('color-mode')) {
+  localStorage.setItem('color-mode', 'dark' || 'light');
+}
+document.body.setAttribute('data-mode', localStorage.getItem('color-mode'));
+</script>
+<script src="/js/theme/tools/utils.js"></script>
+
+<script src="/js/plugins/dist/lazyload.min.js"></script>
+
+<script src="/js/plugins/view-image.min.js"></script>
+<script src="https://events.vercount.one/js" defer="defer"></script><script>if (localStorage.getItem('font-size')) {
+  document.querySelector('.post').style.fontSize = localStorage.getItem('font-size') + 'px';
+}
+</script>
+<script src="/js/main.js" type="module"></script>
+</div></body></html>
