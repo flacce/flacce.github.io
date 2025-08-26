@@ -89,6 +89,21 @@ body[data-mode='dark'] {
   -webkit-transform-origin: bottom center;
   margin-right: 2px;
 }
+#home-banner-title {
+  background: linear-gradient(-45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57, #ff9ff3, #54a0ff);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rainbow-gradient 3s ease infinite;
+  -webkit-animation: rainbow-gradient 3s ease infinite;
+}
+#home-banner-subtitle {
+  animation: neon-glow 4s ease-in-out infinite;
+  -webkit-animation: neon-glow 4s ease-in-out infinite;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+}
 @-moz-keyframes fade {
   0%, 100% {
     opacity: 1;
@@ -691,6 +706,122 @@ body[data-mode='dark'] {
   75% {
     transform: rotate(-3deg) translateY(-0.5px);
     -webkit-transform: rotate(-3deg) translateY(-0.5px);
+  }
+}
+@-moz-keyframes rainbow-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-webkit-keyframes rainbow-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-o-keyframes rainbow-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes rainbow-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@-moz-keyframes neon-glow {
+  0%, 100% {
+    text-shadow: 0 0 5px rgba(255,255,255,0.8), 0 0 10px rgba(255,255,255,0.6), 0 0 15px rgba(255,255,255,0.4);
+    color: #fff;
+  }
+  25% {
+    text-shadow: 0 0 5px rgba(138,43,226,0.8), 0 0 10px rgba(138,43,226,0.6), 0 0 15px rgba(138,43,226,0.4);
+    color: #8a2be2;
+  }
+  50% {
+    text-shadow: 0 0 5px rgba(0,191,255,0.8), 0 0 10px rgba(0,191,255,0.6), 0 0 15px rgba(0,191,255,0.4);
+    color: #00bfff;
+  }
+  75% {
+    text-shadow: 0 0 5px rgba(255,20,147,0.8), 0 0 10px rgba(255,20,147,0.6), 0 0 15px rgba(255,20,147,0.4);
+    color: #ff1493;
+  }
+}
+@-webkit-keyframes neon-glow {
+  0%, 100% {
+    text-shadow: 0 0 5px rgba(255,255,255,0.8), 0 0 10px rgba(255,255,255,0.6), 0 0 15px rgba(255,255,255,0.4);
+    color: #fff;
+  }
+  25% {
+    text-shadow: 0 0 5px rgba(138,43,226,0.8), 0 0 10px rgba(138,43,226,0.6), 0 0 15px rgba(138,43,226,0.4);
+    color: #8a2be2;
+  }
+  50% {
+    text-shadow: 0 0 5px rgba(0,191,255,0.8), 0 0 10px rgba(0,191,255,0.6), 0 0 15px rgba(0,191,255,0.4);
+    color: #00bfff;
+  }
+  75% {
+    text-shadow: 0 0 5px rgba(255,20,147,0.8), 0 0 10px rgba(255,20,147,0.6), 0 0 15px rgba(255,20,147,0.4);
+    color: #ff1493;
+  }
+}
+@-o-keyframes neon-glow {
+  0%, 100% {
+    text-shadow: 0 0 5px rgba(255,255,255,0.8), 0 0 10px rgba(255,255,255,0.6), 0 0 15px rgba(255,255,255,0.4);
+    color: #fff;
+  }
+  25% {
+    text-shadow: 0 0 5px rgba(138,43,226,0.8), 0 0 10px rgba(138,43,226,0.6), 0 0 15px rgba(138,43,226,0.4);
+    color: #8a2be2;
+  }
+  50% {
+    text-shadow: 0 0 5px rgba(0,191,255,0.8), 0 0 10px rgba(0,191,255,0.6), 0 0 15px rgba(0,191,255,0.4);
+    color: #00bfff;
+  }
+  75% {
+    text-shadow: 0 0 5px rgba(255,20,147,0.8), 0 0 10px rgba(255,20,147,0.6), 0 0 15px rgba(255,20,147,0.4);
+    color: #ff1493;
+  }
+}
+@keyframes neon-glow {
+  0%, 100% {
+    text-shadow: 0 0 5px rgba(255,255,255,0.8), 0 0 10px rgba(255,255,255,0.6), 0 0 15px rgba(255,255,255,0.4);
+    color: #fff;
+  }
+  25% {
+    text-shadow: 0 0 5px rgba(138,43,226,0.8), 0 0 10px rgba(138,43,226,0.6), 0 0 15px rgba(138,43,226,0.4);
+    color: #8a2be2;
+  }
+  50% {
+    text-shadow: 0 0 5px rgba(0,191,255,0.8), 0 0 10px rgba(0,191,255,0.6), 0 0 15px rgba(0,191,255,0.4);
+    color: #00bfff;
+  }
+  75% {
+    text-shadow: 0 0 5px rgba(255,20,147,0.8), 0 0 10px rgba(255,20,147,0.6), 0 0 15px rgba(255,20,147,0.4);
+    color: #ff1493;
   }
 }
 * {
