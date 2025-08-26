@@ -14,21 +14,26 @@
   margin-right: 2px;
 }
 #home-banner-title {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
-  background-size: 300% 300%;
+  background: linear-gradient(45deg, #ff9a9e 0%, #fecfef 20%, #fecfef 40%, #a8edea 60%, #fed6e3 80%, #ff9a9e 100%);
+  background-size: 200% 200%;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: elegant-gradient 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-  -webkit-animation: elegant-gradient 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
-  -webkit-filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+  animation: warm-gradient 5s ease-in-out infinite;
+  -webkit-animation: warm-gradient 5s ease-in-out infinite;
+  filter: drop-shadow(0 2px 8px rgba(255,154,158,0.3));
+  -webkit-filter: drop-shadow(0 2px 8px rgba(255,154,158,0.3));
 }
 #home-banner-subtitle {
-  animation: gentle-glow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  -webkit-animation: gentle-glow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  -webkit-transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  background: linear-gradient(90deg, #a8caba 0%, #5d4e75 25%, #a8caba 50%, #5d4e75 75%, #a8caba 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: dreamy-gradient 6s ease-in-out infinite;
+  -webkit-animation: dreamy-gradient 6s ease-in-out infinite;
+  filter: drop-shadow(0 1px 4px rgba(168,202,186,0.4));
+  -webkit-filter: drop-shadow(0 1px 4px rgba(168,202,186,0.4));
 }
 @-moz-keyframes fade {
   0%, 100% {
@@ -634,99 +639,91 @@
     -webkit-transform: rotate(-3deg) translateY(-0.5px);
   }
 }
-@-moz-keyframes elegant-gradient {
+@-moz-keyframes warm-gradient {
   0% {
     background-position: 0% 50%;
   }
-  33% {
-    background-position: 50% 100%;
-  }
-  66% {
+  50% {
     background-position: 100% 50%;
   }
   100% {
     background-position: 0% 50%;
   }
 }
-@-webkit-keyframes elegant-gradient {
+@-webkit-keyframes warm-gradient {
   0% {
     background-position: 0% 50%;
   }
-  33% {
-    background-position: 50% 100%;
-  }
-  66% {
+  50% {
     background-position: 100% 50%;
   }
   100% {
     background-position: 0% 50%;
   }
 }
-@-o-keyframes elegant-gradient {
+@-o-keyframes warm-gradient {
   0% {
     background-position: 0% 50%;
   }
-  33% {
-    background-position: 50% 100%;
-  }
-  66% {
+  50% {
     background-position: 100% 50%;
   }
   100% {
     background-position: 0% 50%;
   }
 }
-@keyframes elegant-gradient {
+@keyframes warm-gradient {
   0% {
     background-position: 0% 50%;
   }
-  33% {
-    background-position: 50% 100%;
-  }
-  66% {
+  50% {
     background-position: 100% 50%;
   }
   100% {
     background-position: 0% 50%;
   }
 }
-@-moz-keyframes gentle-glow {
-  0%, 100% {
-    text-shadow: 0 0 8px rgba(255,255,255,0.3), 0 0 16px rgba(255,255,255,0.2);
-    opacity: 0.9;
+@-moz-keyframes dreamy-gradient {
+  0% {
+    background-position: 0% 50%;
   }
   50% {
-    text-shadow: 0 0 12px rgba(255,255,255,0.5), 0 0 24px rgba(255,255,255,0.3), 0 0 32px rgba(255,255,255,0.1);
-    opacity: 1;
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
-@-webkit-keyframes gentle-glow {
-  0%, 100% {
-    text-shadow: 0 0 8px rgba(255,255,255,0.3), 0 0 16px rgba(255,255,255,0.2);
-    opacity: 0.9;
+@-webkit-keyframes dreamy-gradient {
+  0% {
+    background-position: 0% 50%;
   }
   50% {
-    text-shadow: 0 0 12px rgba(255,255,255,0.5), 0 0 24px rgba(255,255,255,0.3), 0 0 32px rgba(255,255,255,0.1);
-    opacity: 1;
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
-@-o-keyframes gentle-glow {
-  0%, 100% {
-    text-shadow: 0 0 8px rgba(255,255,255,0.3), 0 0 16px rgba(255,255,255,0.2);
-    opacity: 0.9;
+@-o-keyframes dreamy-gradient {
+  0% {
+    background-position: 0% 50%;
   }
   50% {
-    text-shadow: 0 0 12px rgba(255,255,255,0.5), 0 0 24px rgba(255,255,255,0.3), 0 0 32px rgba(255,255,255,0.1);
-    opacity: 1;
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
-@keyframes gentle-glow {
-  0%, 100% {
-    text-shadow: 0 0 8px rgba(255,255,255,0.3), 0 0 16px rgba(255,255,255,0.2);
-    opacity: 0.9;
+@keyframes dreamy-gradient {
+  0% {
+    background-position: 0% 50%;
   }
   50% {
-    text-shadow: 0 0 12px rgba(255,255,255,0.5), 0 0 24px rgba(255,255,255,0.3), 0 0 32px rgba(255,255,255,0.1);
-    opacity: 1;
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
