@@ -82,10 +82,9 @@ Java程序基础首先我们还是从最基本的Java程序基础开始讲解。
 document.body.setAttribute('data-mode', localStorage.getItem('color-mode'));
 
 // 检测域名并设置特殊背景
-// 检测域名并设置特殊背景
 if (window.location.hostname === 'www.cvv.asia') {
-  document.body.setAttribute('data-cvv-domain', 'true');
-  console.log('CVV域名检测成功，已设置特殊背景');
+  document.documentElement.style.setProperty('--banner-background', 'url("https://t.alcy.cc/ycy/")');
+  console.log('CVV域名检测成功，已通过JS设置特殊背景');
 } else {
   console.log('当前域名:', window.location.hostname);
 }
