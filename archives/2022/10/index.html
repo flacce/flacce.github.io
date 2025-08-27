@@ -47,14 +47,6 @@
 }
 document.body.setAttribute('data-mode', localStorage.getItem('color-mode'));
 
-// 检测域名并设置特殊背景
-if (window.location.hostname === 'www.cvv.asia') {
-  document.documentElement.style.setProperty('--banner-background', 'url("https://t.alcy.cc/ycy/")');
-  console.log('CVV域名检测成功，已通过JS设置特殊背景');
-} else {
-  console.log('当前域名:', window.location.hostname);
-}
-
 // 备用时间显示初始化（防止模块加载失败）
 setTimeout(() => {
   const runtime = document.getElementById('runtime');
@@ -81,6 +73,16 @@ setTimeout(() => {
     }
   }
 }, 2000);
+
+// 检测域名并设置特殊背景 - 确保在DOM加载完成后执行
+document.addEventListener('DOMContentLoaded', function() {
+  if (window.location.hostname === 'www.cvv.asia') {
+    document.documentElement.style.setProperty('--banner-background', 'url("https://t.alcy.cc/ycy/")');
+    console.log('CVV域名检测成功，已通过JS设置特殊背景');
+  } else {
+    console.log('当前域名:', window.location.hostname);
+  }
+});
 </script>
 <script src="/js/theme/tools/utils.js"></script>
 
