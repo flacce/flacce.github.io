@@ -9,7 +9,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://s2.loli.net/2022/09/22/lmKBNFc5wPEgjaS.png">
 <meta property="article:published_time" content="2022-10-20T14:01:04.000Z">
-<meta property="article:modified_time" content="2025-08-27T02:38:47.778Z">
+<meta property="article:modified_time" content="2025-08-27T02:43:21.200Z">
 <meta property="article:author" content="Flacce">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://s2.loli.net/2022/09/22/lmKBNFc5wPEgjaS.png"><meta name="robots" content="index,follow"/><meta name="googlebot" content="index,follow"/><meta name="revisit-after" content="1 days"/><title>Java SE笔记（四） | Flacce</title><link rel="shortcut icon" href="https://f.whhhh.eu.org/favicon.png"><link rel="preconnect" href="/assets"/><link rel="preconnect" href="https://registry.npmmirror.com"/><link rel="preconnect" href="assets"/>
@@ -716,35 +716,14 @@ setTimeout(() => {
   }
 }, 2000);
 
-// 检测域名并设置特殊背景
-document.addEventListener('DOMContentLoaded', function() {
-  if (window.location.hostname === 'www.cvv.asia') {
-    // 设置CSS变量
-    document.documentElement.style.setProperty('--banner-background', 'url("https://t.alcy.cc/ycy/")', 'important');
-    
-    // 检查是否是固定背景模式
-    const homeBanner = document.getElementById('home-banner');
-    if (homeBanner && homeBanner.getAttribute('bg-style') === 'fixed') {
-      // 固定背景模式：只添加CSS规则，不直接修改元素样式
-      const style = document.createElement('style');
-      style.innerHTML = 'body[bg-style="fixed"]:before { background-image: url("https://t.alcy.cc/ycy/") !important; }';
-      document.head.appendChild(style);
-    } else {
-      // 非固定背景模式：直接设置banner元素背景
-      const bannerElements = document.querySelectorAll('#home-banner, .banner');
-      bannerElements.forEach(element => {
-        if (element) {
-          element.style.setProperty('background', 'url("https://t.alcy.cc/ycy/")', 'important');
-          element.style.setProperty('background-size', 'cover', 'important');
-        }
-      });
-    }
-    
-    console.log('CVV域名检测成功，已设置特殊背景');
-  } else {
-    console.log('当前域名:', window.location.hostname);
-  }
-});
+// 检测域名并设置特殊背景 - 立即执行避免加载默认图片
+if (window.location.hostname === 'www.cvv.asia') {
+  // 立即设置body属性，让CSS规则生效
+  document.body.setAttribute('data-cvv-domain', 'true');
+  console.log('CVV域名检测成功，已设置特殊背景');
+} else {
+  console.log('当前域名:', window.location.hostname);
+}
 </script>
 <script src="/js/theme/tools/utils.js"></script>
 

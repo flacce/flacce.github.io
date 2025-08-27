@@ -63,6 +63,9 @@ body[data-mode='dark'] {
   --meow-box-shadow: 1px 1px 1px 1px rgba(187,187,187,0.012);
   --meow-card-shadow: none;
 }
+body[data-cvv-domain='true'] {
+  --banner-background: url("https://t.alcy.cc/ycy/") !important;
+}
 :root {
   --meow-text-shadow-title: 2px 2px 1.5px rgba(0,0,0,0.25);
   --meow-text-shadow: 2px 2px 1px rgba(0,0,0,0.125);
