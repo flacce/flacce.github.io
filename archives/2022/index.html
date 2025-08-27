@@ -77,7 +77,25 @@ setTimeout(() => {
 // 检测域名并设置特殊背景 - 确保在DOM加载完成后执行
 document.addEventListener('DOMContentLoaded', function() {
   if (window.location.hostname === 'www.cvv.asia') {
-    document.documentElement.style.setProperty('--banner-background', 'url("https://t.alcy.cc/ycy/")');
+    // 设置CSS变量，使用!important确保优先级
+    document.documentElement.style.setProperty('--banner-background', 'url("https://t.alcy.cc/ycy/")', 'important');
+    
+    // 直接设置背景元素的样式作为备用方案
+    const homeBanner = document.getElementById('home-banner');
+    if (homeBanner) {
+      homeBanner.style.setProperty('background', 'url("https://t.alcy.cc/ycy/")', 'important');
+      homeBanner.style.setProperty('background-size', 'cover', 'important');
+    }
+    
+    // 设置body的before伪元素背景（针对固定背景模式）
+    const style = document.createElement('style');
+    style.textContent = `
+      body[bg-style="fixed"]:before {
+        background-image: url("https://t.alcy.cc/ycy/") !important;
+      }
+    `;
+    document.head.appendChild(style);
+    
     console.log('CVV域名检测成功，已通过JS设置特殊背景');
   } else {
     console.log('当前域名:', window.location.hostname);
