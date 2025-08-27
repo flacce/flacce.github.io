@@ -63,3 +63,15 @@ body[data-mode='dark'] {
 body[data-cvv-domain='true'] {
   --banner-background: url("https://t.alcy.cc/ycy/") !important;
 }
+body[data-cvv-domain='true'] #home-banner[bg-style='none'] {
+  background: url("https://t.alcy.cc/ycy/") !important;
+}
+body[data-cvv-domain='true'] #home-banner[bg-style='fixed'] {
+  background: url("https://t.alcy.cc/ycy/") !important;
+}
+body[data-cvv-domain='true'] .banner {
+  background: url("https://t.alcy.cc/ycy/") !important;
+}
+body[data-cvv-domain='true'][bg-style='fixed']:before {
+  background-image: url("https://t.alcy.cc/ycy/") !important;
+}
