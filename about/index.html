@@ -10,7 +10,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://f.whhhh.eu.org/favicon.png">
 <meta property="article:published_time" content="2025-08-22T15:00:00.000Z">
-<meta property="article:modified_time" content="2025-08-27T02:17:02.998Z">
+<meta property="article:modified_time" content="2025-08-27T02:20:48.556Z">
 <meta property="article:author" content="Flacce">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://f.whhhh.eu.org/favicon.png"><meta name="robots" content="index,follow"/><meta name="googlebot" content="index,follow"/><meta name="revisit-after" content="1 days"/><title>关于 | Flacce</title><link rel="shortcut icon" href="https://f.whhhh.eu.org/favicon.png"><link rel="preconnect" href="/assets"/><link rel="preconnect" href="https://registry.npmmirror.com"/><link rel="preconnect" href="assets"/>
@@ -85,8 +85,23 @@ setTimeout(() => {
 // 检测域名并设置特殊背景
 document.addEventListener('DOMContentLoaded', function() {
   if (window.location.hostname === 'www.cvv.asia') {
-    // 只替换CSS变量，不添加额外样式层
+    // 设置CSS变量
     document.documentElement.style.setProperty('--banner-background', 'url("https://t.alcy.cc/ycy/")', 'important');
+    
+    // 直接设置所有可能的banner元素
+    const bannerElements = document.querySelectorAll('#home-banner, .banner, body[bg-style="fixed"]:before');
+    bannerElements.forEach(element => {
+      if (element) {
+        element.style.setProperty('background-image', 'url("https://t.alcy.cc/ycy/")', 'important');
+        element.style.setProperty('background', 'url("https://t.alcy.cc/ycy/")', 'important');
+      }
+    });
+    
+    // 为固定背景模式添加样式
+    const style = document.createElement('style');
+    style.innerHTML = 'body[bg-style="fixed"]:before { background-image: url("https://t.alcy.cc/ycy/") !important; }';
+    document.head.appendChild(style);
+    
     console.log('CVV域名检测成功，已设置特殊背景');
   } else {
     console.log('当前域名:', window.location.hostname);
