@@ -14,6 +14,7 @@
   --highlight-string: #9c9;
   --highlight-emphasis: #c9c;
   --highlight-meta: #a3685a;
+  --highlight-marked: rgba(142,165,220,0.271);
 }
 body[data-mode='light'] {
   --highlight-background: #f8f8f8;
@@ -31,6 +32,7 @@ body[data-mode='light'] {
   --highlight-string: #7cc844;
   --highlight-emphasis: #a363d5;
   --highlight-meta: #d73c9a;
+  --highlight-marked: rgba(239,215,135,0.322);
 }
 body[data-mode='dark'] {
   --highlight-background: #2d2d2d;
@@ -48,4 +50,5 @@ body[data-mode='dark'] {
   --highlight-string: #9c9;
   --highlight-emphasis: #c9c;
   --highlight-meta: #a3685a;
+  --highlight-marked: rgba(142,165,220,0.271);
 }

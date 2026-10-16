@@ -1,0 +1,74 @@
+#artitalk_main .cbp_tmlabel {
+  border: 1px solid var(--card-border-color);
+  border-radius: 0.8rem !important;
+  box-shadow: none !important;
+  margin: 0 0 1.5rem 3.5rem !important;
+}
+#artitalk_main .cbp_tmlabel img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  object-fit: contain;
+}
+#artitalk_main .cbp_tmlabel p strong {
+  font-weight: bold;
+}
+#artitalk_main .cbp_tmlabel .atemoji {
+  margin: 0;
+}
+#artitalk_main .cbp_tmlabel .shuoshuo_time {
+  color: var(--font-color-light-2);
+  font-size: 0.875rem;
+}
+#artitalk_main .cbp_tmlabel .shuoshuo_time span:last-child:hover span {
+  color: var(--theme-color) !important;
+}
+#artitalk_main .cbp_tmlabel .shuoshuo_time span:last-child:hover svg path {
+  fill: var(--theme-color);
+}
+#artitalk_main .power a {
+  color: var(--theme-color) !important;
+}
+#artitalk_main .power svg:hover path {
+  fill: var(--theme-color);
+}
+#artitalk_main #shuoshuo_content {
+  padding: 0;
+}
+#artitalk_main #readmore {
+  background: var(--background-color-grey-light-1);
+}
+#artitalk_main #readmore:hover {
+  background: var(--theme-color-light-1);
+  color: var(--font-color-invert);
+  box-shadow: none;
+}
+#operare_artitalk #userinfo center p,
+#operare_artitalk #shuoshuo-modal center p {
+  text-align: center;
+}
+#operare_artitalk #userinfo input[type='button'],
+#operare_artitalk #shuoshuo-modal input[type='button'] {
+  background: var(--background-color-grey-light-1);
+}
+#operare_artitalk #shanchu p,
+#operare_artitalk #shanchur p {
+  text-align: center;
+}
+body[data-mode="dark"] #operare_artitalk #userinfo input[type='button'],
+body[data-mode="dark"] #operare_artitalk #shuoshuo-modal input[type='button'] {
+  background: var(--background-color-grey-transparent);
+  color: var(--font-color-light-1);
+}
+@media (max-width: 900px) {
+  #artitalk_main .cbp_tmtimeline>li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #artitalk_main .cbp_tmlabel {
+    margin: 0 !important;
+    width: 100%;
+  }
+}

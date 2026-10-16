@@ -1,0 +1,6 @@
+.title-tag {
+  text-align: center;
+  font-weight: bold;
+  font-size: $font-size-title-3;
+  margin: 1.3em;
+}

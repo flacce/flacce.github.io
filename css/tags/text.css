@@ -1,0 +1,35 @@
+span.text-tag {
+  color: var(--theme-color);
+}
+span.text-tag.pink {
+  color: $color-pink;
+}
+span.text-tag.purple {
+  color: $color-purple;
+}
+span.text-tag.yellow {
+  color: #ffcf22;
+}
+span.text-tag.blue {
+  color: $color-blue;
+}
+span.text-tag.green {
+  color: $color-green;
+}
+span.text-tag[type="2"] {
+  text-decoration: underline wavy;
+}
+span.text-tag[type="3"] {
+  text-decoration: underline dashed;
+  text-underline-offset: 4.5px;
+}
+span.text-tag[type="4"] {
+  text-decoration: underline dotted;
+  text-underline-offset: 4.5px;
+}
+span.text-tag[type="5"] {
+  text-decoration: line-through;
+}
+span.text-tag[type="6"] {
+  animation: color-change 2.5s ease-in-out infinite;
+}

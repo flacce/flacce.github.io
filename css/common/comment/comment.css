@@ -2,3 +2,101 @@
   margin-top: 3.5rem;
 meow-smallscreen()
 }
+.recent-comments {
+  overflow: hidden;
+}
+.recent-comments-container {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.6rem;
+  font-size: 0.9em;
+}
+.recent-comments-container[loaded] {
+  height: 190px;
+  animation: roll-loop 8s cubic-bezier(0.17, 0.02, 0.88, 0.99) 1s infinite alternate;
+}
+.recent-comments-container img {
+  cursor: auto !important;
+  vertical-align: middle;
+}
+.recent-comments-container br {
+  display: none;
+}
+.recent-comments-container .recent-comments-item {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  border-left: 4px solid var(--background-color-grey);
+  padding: 0.2rem 0 0.2rem 0.5rem;
+  transition: all 0.3s ease-in-out;
+  color: var(--font-color);
+}
+.recent-comments-container .recent-comments-item:hover {
+  border-left-color: var(--theme-color);
+  transform: translateX(10px);
+}
+.recent-comments-container .recent-comments-content {
+  width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0;
+  color: var(--font-color-light-1);
+}
+.recent-comments-container .recent-comments-content img {
+  width: 1rem;
+  margin: 0 1px;
+}
+.recent-comments-container .recent-comments-user {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  width: 100%;
+}
+.recent-comments-container .recent-comments-user span {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  background: var(--background-color-grey-transparent);
+  border-radius: 0.4rem;
+  padding: 0 0.3em;
+}
+.recent-comments-container .recent-comments-user img {
+  width: 1.2rem;
+  border-radius: 50%;
+}
+@-moz-keyframes roll-loop {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-424.2px);
+  }
+}
+@-webkit-keyframes roll-loop {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-424.2px);
+  }
+}
+@-o-keyframes roll-loop {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-424.2px);
+  }
+}
+@keyframes roll-loop {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-424.2px);
+  }
+}

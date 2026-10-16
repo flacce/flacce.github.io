@@ -1,0 +1,117 @@
+.chatbox {
+  background: var(--background-color);
+  border: 1px solid var(--card-border-color);
+  width: 70%;
+  border-radius: 0.8rem;
+  margin: 2rem auto;
+  overflow: hidden;
+}
+.chatbox-title {
+  height: 4rem;
+  background: var(--font-color-light-1);
+  color: var(--font-color-invert);
+  font-size: 1.15em;
+  font-weight: bold;
+  text-align: center;
+  line-height: 4rem;
+  position: relative;
+}
+.chatbox-title:before {
+  content: '<';
+  position: absolute;
+  top: 0;
+  left: 1.5rem;
+  font-size: 1.3em;
+}
+.chatbox-title:after {
+  content: '···';
+  position: absolute;
+  top: 0;
+  right: 1.5rem;
+  font-size: 1.3em;
+}
+.chatbox-main {
+  padding: 1.2rem 1.5rem;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+.chatbox-time {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--font-color-light-2);
+  font-size: 0.8em;
+}
+.chatbox-item {
+  display: flex;
+  margin-bottom: 1.2rem;
+  align-items: flex-start;
+}
+.chatbox-item:last-child {
+  margin-bottom: 0;
+}
+.chatbox-item>div:nth-child(2) {
+  margin: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  max-width: calc(100% - 6rem - 2rem);
+}
+.chatbox-item[right] {
+  flex-direction: row-reverse;
+}
+.chatbox-item[right] >div:nth-child(2) {
+  align-items: flex-end;
+}
+.chatbox-item[right] .chatbox-content {
+  background: var(--theme-color-light-3);
+}
+.chatbox-avatar {
+  width: 3rem;
+  height: 3rem;
+  aspect-ratio: 1;
+  border-radius: 0.8rem;
+}
+.chatbox-avatar:has(svg) {
+  background: var(--background-color-grey-light-1);
+  display: flex;
+  justify-content: center;
+}
+.chatbox-avatar img {
+  margin: 0;
+}
+.chatbox-avatar svg {
+  width: 2rem;
+}
+.chatbox-name {
+  color: var(--font-color-light-2);
+  font-size: 0.8em;
+  margin: 0 0.25rem;
+}
+.chatbox-content {
+  min-height: 3rem;
+  background: var(--background-color);
+  box-shadow: var(--meow-card-shadow);
+  padding: 0.66rem 0.75rem;
+  border-radius: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+.chatbox-content p {
+  margin: 0;
+}
+.chatbox-img img {
+  margin: 0.8rem auto;
+}
+body[data-mode="dark"] .chatbox-title {
+  background: var(--background-color-grey-light-2);
+  color: var(--font-color);
+}
+body[data-mode="dark"] .chatbox-content {
+  background: var(--background-color-grey-light-2);
+}
+body[data-mode="dark"] .chatbox-item[right] .chatbox-content {
+  color: var(--font-color-light-3);
+}
+meow-smallscreen()

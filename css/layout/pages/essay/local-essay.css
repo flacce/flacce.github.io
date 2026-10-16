@@ -1,0 +1,112 @@
+#essay>ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0;
+}
+.essay-item {
+  display: flex;
+  align-items: flex-start;
+}
+.essay-avatar {
+  flex-shrink: 0;
+  width: 3.2rem;
+  height: 3.2rem;
+  margin: 0.2rem 0.5rem 0;
+}
+.essay-avatar img {
+  width: 100%;
+  object-fit: contain;
+  border-radius: 50%;
+  border: 3px solid var(--font-color-invert);
+  box-shadow: var(--meow-box-shadow);
+}
+.essay-avatar:empty {
+  display: none;
+}
+.essay-main {
+  width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+}
+.essay-content {
+  width: 100%;
+  background: var(--background-color-grey-transparent-2);
+  border: 1px solid var(--card-border-color);
+  border-radius: 0.8rem;
+  padding: 0.9rem 1.1rem;
+}
+.essay-text {
+  font-size: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: justify;
+}
+.essay-text p {
+  margin: 0;
+}
+.essay-text img {
+  width: 100%;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  object-fit: contain;
+}
+.essay-container-img {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.5rem;
+  margin: 0.8rem 0 0.2rem;
+}
+.essay-container-img a {
+  flex: 0 1;
+  min-width: calc(100% / 3 - 0.35rem);
+  aspect-ratio: 16/9;
+}
+.essay-container-img a:only-of-type {
+  flex: 1;
+}
+.essay-container-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  object-fit: cover;
+}
+.essay-bottom {
+  width: 100%;
+  margin: 0.2rem 0 0 1rem;
+}
+.essay-info {
+  color: var(--font-color-light-2);
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+#essay-tips {
+  font-size: 0.875rem;
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--font-color-light-1);
+}
+@media (max-width: 900px) {
+  .essay-item {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+  }
+  .essay-content {
+    padding: 0.8em 1em;
+  }
+  .essay-text {
+    font-size: 1em;
+  }
+  .essay-container-img a {
+    min-width: calc(100% / 2 - 0.25rem);
+  }
+}

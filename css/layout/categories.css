@@ -1,69 +1,108 @@
 .category-container {
-  width: 85%;
-  min-height: 80px;
-  margin: 0 auto;
-  position: relative;
   user-select: none;
 }
-.category-container:after {
-  content: "";
-  background-image: url("/assets/images/Hexo-Theme-MEOW.png");
-  background-size: cover;
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 100px;
-  height: 100px;
-  opacity: 0.7;
-  animation: run-bounce 1.5s linear infinite alternate;
-  z-index: -1;
-}
-.categories-list {
-  padding: 0;
+.category-content .category-item {
   display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 3rem;
+  border-radius: 0.8rem;
+  transition: background 0.2s ease-in;
 }
-.categories-list a {
-  color: var(--font-color);
-  display: inline-block;
-  max-width: 80%;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
+.category-content .category-item:hover {
+  background: var(--background-color-grey-transparent);
+}
+.category-content .category-item:hover .category-name a {
+  padding-left: 0.5rem;
+}
+.category-content .category-item:hover .category-name .icon {
+  margin-left: 0.35rem;
+}
+.category-name {
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+}
+.category-name .icon {
+  height: 1.5rem;
+  stroke-width: 3;
   transition: all 0.3s ease;
 }
-.categories-list a:hover {
+.category-name .icon[fold='true'] {
+  transform: rotate(-90deg);
+}
+.category-name a {
+  color: var(--font-color);
+  font-size: 1.25rem;
+  font-weight: bold;
+  transition: all 0.2s ease-in-out;
+}
+.category-name a:hover {
   color: var(--theme-color);
 }
-.categories-list a:hover:before {
-  content: '> ';
+.category-count {
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+  width: 3rem;
+  color: var(--font-color-light-1);
+  transition: color 0.2s ease-in-out;
 }
-.categories-list li {
-  list-style: none;
+.category-count .icon {
+  height: 1.3rem;
+  transition: all 0.2s ease-in-out;
 }
-.categories-list >li {
-  padding: 0.5rem 1.3rem;
+.category-count:hover {
+  color: var(--theme-color);
 }
-.categories-list >li >a {
-  font-size: 1.3rem;
-  font-weight: bold;
+.category-count:hover .icon {
+  stroke: var(--theme-color);
 }
-.categories-list span {
-  color: var(--font-color-light-2);
-  margin-left: 0.5rem;
-  vertical-align: super;
-  font-size: 0.9rem;
+.category-child {
+  margin-left: 2rem;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
 }
-.categories-list-child {
-  padding-left: 1.3rem;
-  margin: 0.6rem 0 0 0.3rem;
-  border-left: 1px solid var(--card-border-color);
+.category-child[show] {
+  height: max-content;
+  animation: show-ease 0.4s ease-in forwards;
 }
-.categories-list-child a {
+.category-child .category-name a {
   font-size: 1.15rem;
 }
-.categories-list-child li {
-  margin-top: 0.6rem;
+.category-child .category-item {
+  padding: 0.8rem 3rem 0.8rem 2rem;
+}
+.category-child .category-item:hover i:before {
+  height: 1.25rem;
+}
+.category-child i {
+  position: relative;
+  width: 1.8rem;
+  height: 100%;
+}
+.category-child i:before {
+  content: '';
+  position: absolute;
+  background: var(--font-color-light-1);
+  border-radius: 0.35rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 0.35rem;
+  height: 0.35rem;
+  transition: all 0.2s ease-in-out;
+  z-index: $z-index-1;
+}
+.category-child i:after {
+  content: "";
+  position: absolute;
+  width: 0.175rem;
+  height: 1.3rem;
+  left: calc(50% + 0.0875rem);
+  bottom: 0;
+  transform: translate(-50%, -60%);
+  border-left: 2px dashed var(--font-color-light-3);
 }
 meow-smallscreen()

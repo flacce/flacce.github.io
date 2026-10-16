@@ -51,10 +51,6 @@
 }
 .home-article-title {
   margin: 0.2rem 0 0.6rem;
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: flex-start;
-  gap: 0.5rem;
   overflow: hidden;
   line-height: 2rem;
 }
@@ -62,25 +58,32 @@
   font-size: 1.5rem;
   font-weight: bold;
   color: var(--font-color);
+  vertical-align: bottom;
 }
 .home-article-title a:hover {
   color: var(--theme-color);
 }
 .home-article-encrypt {
-  display: flex;
-  align-items: center;
+  display: inline-block;
   height: 2rem;
+  width: 1.5rem;
+  position: relative;
+  margin-right: 0.3rem;
 }
 .home-article-encrypt .icon {
+  position: absolute;
   height: 1.35rem;
+  width: 100%;
+  top: 50%;
 }
 .home-article-sticky {
   background-color: var(--theme-color);
   padding: 0 0.5rem;
   border-radius: 0.5rem;
   color: var(--link-hover-font-color);
-  height: 2rem;
   white-space: nowrap;
+  display: inline-block;
+  margin-right: 0.5rem;
 }
 .home-article-excerpt {
   text-align: justify;

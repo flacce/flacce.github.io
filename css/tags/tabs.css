@@ -5,10 +5,10 @@
 }
 .tabs .tabs-nav {
   width: max-content;
+  max-width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
-  justify-content: center;
   gap: 0.3rem;
   margin: 0 auto 1rem;
   padding: 0;
@@ -16,12 +16,17 @@
   border-radius: 0.8rem;
   background: var(--background-color-grey-transparent);
   box-shadow: var(--meow-box-shadow);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: var(--background-color-grey) transparent;
 }
 .tabs .tabs-nav .tab {
   padding: 0.7rem 0.8rem;
   transition: all 0.3s ease;
   border-radius: 0.8rem;
   font-size: 1em;
+  white-space: nowrap;
 }
 .tabs .tabs-nav .tab.active {
   background: var(--background-color);

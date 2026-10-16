@@ -1,0 +1,72 @@
+span.mask {
+  position: relative;
+  margin: 0 0.12rem;
+  background: var(--font-color-light-3);
+  border-radius: 0.2rem;
+  color: rgba(0,0,0,0);
+  transition: all 0.2s ease-in-out;
+}
+span.mask[type='0']:hover,
+span.mask[type='1'].visited {
+  background: none;
+  color: var(--font-color);
+}
+span.mask[type='2'] {
+  background: none !important;
+  text-decoration: underline var(--font-color-light-2);
+  -webkit-text-decoration: underline var(--font-color-light-2);
+}
+span.mask[type='2'].visited {
+  color: var(--font-color);
+}
+span.mask.theme {
+  background: var(--theme-color);
+}
+span.mask.theme[type='0']:hover,
+span.mask.theme[type='1'].visited,
+span.mask.theme[type='2'].visited {
+  color: var(--theme-color);
+}
+span.mask.pink {
+  background: $color-pink-light;
+}
+span.mask.pink[type='0']:hover,
+span.mask.pink[type='1'].visited,
+span.mask.pink[type='2'].visited {
+  color: $color-pink;
+}
+span.mask.purple {
+  background: $color-purple-light;
+}
+span.mask.purple[type='0']:hover,
+span.mask.purple[type='1'].visited,
+span.mask.purple[type='2'].visited {
+  color: $color-purple;
+}
+span.mask.yellow {
+  background: $color-yellow-light;
+}
+span.mask.yellow[type='0']:hover,
+span.mask.yellow[type='1'].visited,
+span.mask.yellow[type='2'].visited {
+  color: $color-yellow;
+}
+span.mask.blue {
+  background: $color-blue-light;
+}
+span.mask.blue[type='0']:hover,
+span.mask.blue[type='1'].visited,
+span.mask.blue[type='2'].visited {
+  color: $color-blue;
+}
+span.mask.green {
+  background: $color-green-light;
+}
+span.mask.green[type='0']:hover,
+span.mask.green[type='1'].visited,
+span.mask.green[type='2'].visited {
+  color: $color-green;
+}
+body[data-mode="dark"] span.mask {
+  filter: brightness(90%);
+}

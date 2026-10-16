@@ -35,3 +35,10 @@ body[data-mode="dark"] img:not(.icon) {
 .view-image img {
   filter: brightness(100%) !important;
 }
+.postcover {
+  border-radius: 0.8rem;
+  width: 100%;
+  max-height: 28rem;
+  object-fit: cover !important;
+  margin: 2rem 0 !important;
+}
